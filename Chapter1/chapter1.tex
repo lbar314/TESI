@@ -3,7 +3,65 @@
 In this first chapter a basic description of the physics of strongly interacting matter, in particular of the properties of the Quark-Gluon Plasma (QGP) and of the main observables from which it is possible to characterize it, is given, in order to introduce the reader to the theoretical framework of the relativistic heavy-ion physics.
 %
 \section{QCD}
-Within the Standard Model, the Quantum Chromodynamics (QCD) is the gauge theory describing the colour interaction between quarks and gluons. This theory is based on the non-abelian group $SU(3)_{C}$, whose generators are the eight Gell-Mann matrices ($\lambda^{a}$, with $a=1,...,8$). A vector boson (gluon) is associated to each generator and the algebra of the group determines the interaction vertices.\\
+Within the Standard Model, the Quantum Chromodynamics (QCD) is the gauge theory describing the colour interaction between quarks and gluons. This theory is based on the non-abelian group $SU(3)_{C}$, whose generators are the eight Gell-Mann matrices:
+%
+\begin{equation*}
+\lambda_{1} = 
+  \begin{pmatrix}
+     \ 0 & 1 & 0 \\
+     \ 1 & 0 & 0 \\
+     \ 0 & 0 & 0
+   \end{pmatrix}
+\ \ \lambda_{2} = 
+  \begin{pmatrix}
+     \ 0 & -i & 0 \\
+     \ i & 0 & 0 \\
+     \ 0 & 0 & 0
+   \end{pmatrix}
+\ \ \lambda_{3} = 
+  \begin{pmatrix}
+     \ 1 & 0 & 0 \\
+     \ 0 & -1 & 0 \\
+     \ 0 & 0 & 0
+   \end{pmatrix}
+\end{equation*}
+\begin{equation}
+\lambda_{4} = 
+  \begin{pmatrix}
+     \ 0 & 0 & 1 \\
+     \ 0 & 0 & 0 \\
+     \ 1 & 0 & 0
+   \end{pmatrix}
+\ \ \lambda_{5} = 
+  \begin{pmatrix}
+     \ 0 & 0 & -i \\
+     \ 0 & 0 & 0 \\
+     \ i & 0 & 0
+   \end{pmatrix}
+   \\
+\end{equation}
+\begin{equation*}
+\lambda_{6} = 
+  \begin{pmatrix}
+     \ 0 & 0 & 0 \\
+     \ 0 & 0 & 1 \\
+     \ 0 & 1 & 0
+   \end{pmatrix}
+\ \ \lambda_{7} = 
+  \begin{pmatrix}
+     \ 0 & 0 & 0 \\
+     \ 0 & 0 & -i \\
+     \ 0 & i & 0
+   \end{pmatrix}
+\ \ \lambda_{8} = \frac{1}{\sqrt{3}} 
+  \begin{pmatrix}
+     \ 1 & 0 & 0 \\
+     \ 0 & 1 & 0 \\
+     \ 0 & 0 & -2
+   \end{pmatrix}
+\end{equation*}
+%
+A vector boson (gluon) is associated to each generator and the algebra of the group determines the interaction vertices.\\
 The QCD lagrangian is given by equation:
 %
 \begin{equation}
@@ -23,13 +81,12 @@ and
   G^{a}_{\mu\nu}(x)=\partial_{\mu}A^{a}_{\nu}(x)-\partial_{\nu}A^{a}_{\mu}(x)+ g f_{abc} A^{b}_{\mu}(x)A^{c}_{\nu}(x)
 \end{equation*}
 %
-Since the group $SU(3)_{C}$ is non abelian, i.e. the structure constants $f_{abc}$ are not null, interactions between gauge bosons are allowed, in particular vertices with three and four gluons can be found, making QCD extremely different than QED: first, gluon are colour-charged, second, strong interaction is low range.
-
+Since the group $SU(3)_{C}$ is non abelian, i.e. the structure constants $f_{abc}$ are not null, interactions between gauge bosons are allowed, in particular vertices with three and four gluons can be found, making QCD extremely different from QED: first, gluon are colour-charged, second, colour force is a short range interaction.
+%
 \subsection{Running coupling constants}
-
 Many aspects of strong interaction can be explained considering the coupling constant $\alpha$ as a function of the energy scale: this dependence is due to the renormalization scheme of the adopted perturbative framework.\\
 QED case will be first considered in order to let a better comprehension of the problem.\\
-From the renormalization theory, the QED coupling constant as a function of $Q^{2}$ is given by equation:
+From the renormalization theory, the QED coupling constant as a function of squared transferred momentum $Q^{2}$ is given by equation:
 %
 \begin{equation}
   \alpha(|Q|^{2})= \frac{ \alpha(\mu^{2})}{1-\frac{\alpha(\mu^{2})}{3\pi}ln(|Q|^{2} / \mu^{2})}
@@ -37,7 +94,7 @@ From the renormalization theory, the QED coupling constant as a function of $Q^{
 \end{equation}
 %
 where $\mu$ is the energy scale used to fix the overall scale constant, which cannot be determined by the theory.\\
-This behaviour can be explained by the analogy with a negative charge immersed in a dielectric medium: as in the case of the dielectric the negative charge polarizes the molecules of the medium, orienting the positive charges towards the negative one, causing its screening, likewise the presence of a charge in the vacuum causes the polarization of the virtual electron-positron couples and a screening of the electric charge itself. For this reason, the screening is greater at long distances and the value of the charge, then of $\alpha$, increases as the distance decreases, or rather as the transferred momentum increases, as shown in Figure \ref{qedalpha}.
+This behaviour can be explained by the analogy with a negative charge immersed in a dielectric medium: the negative charge polarizes the molecules of the medium, orienting the positive charges towards the negative one, causing its screening. Similarly the presence of a charge in the vacuum causes the polarization of the virtual electron-positron couples and a screening of the electric charge itself. The screening is greater at long distances and the value of the charge, then of $\alpha$, increases as the distance decreases, or rather as the transferred momentum increases, as shown in Figure \ref{qedalpha}.
 %
 \begin{figure}
   \centering
@@ -49,7 +106,7 @@ This behaviour can be explained by the analogy with a negative charge immersed i
 \end{figure}
 %
 In QCD, instead, the coupling constant $\alpha_{S}$ has a different behaviour, due to the fact that there are gluon loops besides fermion loops. Indeed the renormalization theory shows that bosonic and fermionic loop contributions have opposite signs: besides the screening of the colour charge, like for electric charge in QED, there is an antiscreening effect due to gluon loops.\\
-The evolution of the strong coupling constant is given by equation:
+The evolution of the strong coupling constant is given by the equation:
 %
 \begin{equation}
  \alpha_{S}(|Q|^{2})= \frac{ \alpha_{S}(\mu^{2})}{1+\frac{\alpha_{S}(\mu^{2})}{12\pi}(33-2n_{f})ln(|Q|^{2} / \mu^{2})}
@@ -73,12 +130,11 @@ For this reason, it is convenient to introduce the parameter $\Lambda_{QCD}$, wh
  \label{eq:aqcd2}
 \end{equation}
 %
-For the above considerations, two regimes can be distinguished: asymptotic freedom and confinement.\\
-Asymptotic freedom is the regime of high energy, where the coupling constant $\alpha_{S}$ is small enough to allow a perturbative approach: for $Q \sim$ 100 GeV - 1 TeV, $\alpha_{S}$ is about 0.1. For such energies the strong interaction becomes mild, reducing the energy necessary to divide colour charges and to release quark and gluons from their bound states. Since high $Q^{2}$ means short distances, it is possible to obtain this state of free partons by compressing or heating QCD matter: the result is a plasma of quark and gluons, the QGP, of which it will be discussed in the next section.\\
-Confinement, instead, is the regime of low energy, where the perturbative approach is not valid anymore but other theoretical methods can be used, like, e.g., lattice QCD. In this range of energy, as already said before, the strong interaction becomes more important thanks to the formation of gluon loops and to the consequent antiscreening of the colour charges. Moreover, the energy necessary to separate two colour charges increases with the separation itself, making the system move towards a stable equilibrium characterized by the absence of free colour charges and by the formation of colourless states. Two methods used for the study of confined will be discussed in the next section.
-
-\clearpage
-
+Two regimes can be distinguished: asymptotic freedom and confinement.\\
+Asymptotic freedom is the regime of high energy, where the coupling constant $\alpha_{S}$ is small enough to allow a perturbative approach: for $Q \sim$ 100 GeV - 1 TeV, $\alpha_{S}$ is about 0.1. For such energies the strong interaction becomes mild, reducing the energy necessary to separate colour charges and to release quark and gluons from their bound states. Since high $Q^{2}$ means short distances, it is possible to obtain this state of free partons by compressing or heating QCD matter: the result is a plasma of quarks and gluons, the QGP, that will be discussed in the next section.\\
+Confinement, instead, is the regime of low energy, where the perturbative approach is not valid anymore hence other theoretical methods must be used, like lattice QCD. In this range of energies the strong interaction becomes stronger thanks to the formation of gluon loops and to the consequent antiscreening of the colour charges.\\
+Two methods used for the study of confined will be discussed in the next section.
+%
 \section{QCD phase space diagram}
 %
 \begin{figure}
@@ -89,14 +145,12 @@ Confinement, instead, is the regime of low energy, where the perturbative approa
 \end{figure}
 %
 Nuclear matter is expected to exhibit different behaviours depending on its temperature T and baryo-chemical potential $\mu_{b}$. The latter is defined
-as the energy needed to increase by one unity the total number of baryons and anti-baryons, $\mu_{B}= \partial E / \partial N_{B}$, and is related to the baryon density. An example of phase diagram is given in Figure \ref{fig:phase}.\\ At low temperatures and small $\mu_{B}$ ($\sim$1 GeV), nuclear matter is confined in hadrons and atomic nuclei. A state of hadronic gas can be reached either by increasing T or compressing the nuclear matter, i.e. increasing $\mu_{B}$: in these conditions, the nucleons can interact and form pions, excited states or other hadrons.
-For even larger values of T and $\mu_{B}$ the transition to the phase of QGP, a state of deconfined strongly interacting matter, is predicted. These conditions necessary to the formation of QGP existed in the very first stages of the Universe: in facts, according to the Big Bang theory, about fourteen billion years ago the Universe was concentrated in a very small region of space, characterized by almost infinite temperature and energy, and then it started expanding and consequently cooling down. In the first stages, corresponding to few microseconds after the Big Bang, the temperature was so high that hadrons could not be formed and all the strongly interacting matter existed in form of QGP. However, for the expansion and the cooling, the energy density and the temperature of the Universe decreased under critical values, respectively $\epsilon_{c}\approx1 \;$GeV$/fm^{3}$ and $T_{c}\approx 170\; $MeV $ \approx 2\cdot10^{12}\; K$, for which a state of deconfined matter was not possible anymore, causing the transition to a confined state.\\ Unfortunately, it is not possible to observe the characteristics of this primordial state, since the transition from deconfined to confined matter took place when the electromagnetic radiation was still coupled with the primordial plasma constituting the universe, which therefore was opaque. For this reason, the only way to study the characteristics of the QGP, and of the transition from this to the hadronic phase, is to recreate these conditions using high energy heavy ions collisions, as it will be seen farther.
-However, in orther to describe the evolution of QGP and, above all, the hadronization, it is not possible to use the perturbative approach for the reason said before and some methods to describe confined strongly interacting matter are needed.
-
+as the energy needed to increase by one unity the total number of baryons and anti-baryons, $\mu_{B}= \partial E / \partial N_{B}$, and is related to the baryon density. An example of phase diagram is given in Figure \ref{fig:phase}.\\ At low temperatures and $\mu_{B}$ $\sim$ 1 GeV, nuclear matter is confined in hadrons and atomic nuclei. A state of hadronic gas can be reached either by increasing T or compressing the nuclear matter, i.e. increasing $\mu_{B}$: in these conditions, the nucleons can interact and form pions, excited states or other hadrons.
+For even larger values of T and $\mu_{B}$ the transition to the phase of QGP is predicted. These conditions necessary to the formation of QGP existed in the very first stages of the Universe: according to the Big Bang theory, about fourteen billion years ago the Universe was concentrated in a very small region of space, characterized by extremely high temperature and energy density, and then it started expanding and consequently cooling down. In the first stages, corresponding to few microseconds after the Big Bang, the temperature was so high that hadrons could not be formed and all the strongly interacting matter existed in form of QGP. However, because of Universe expansion and cooling, its energy density and the temperature decreased under critical values, respectively $\epsilon_{c}\approx1 \;$GeV$/fm^{3}$ and $T_{c}\approx 170\; $MeV $ \approx 2\cdot10^{12}\; K$, for which a state of deconfined matter was not possible anymore, causing the transition to a confined state.\\ Unfortunately, it is not possible to observe the characteristics of this primordial state, since the transition from deconfined to confined matter took place when the electromagnetic radiation was still coupled with the primordial plasma constituting the universe, which therefore was opaque. For this reason, the only way to study the characteristics of the QGP, and of the transition from this to the hadronic phase, is to recreate these conditions using high energy heavy ion collisions, as it will be seen farther. However, in order to describe the evolution of QGP and, above all, the hadronization, it is not possible to use the perturbative approach for the reason said before and some methods to describe confined strongly interacting matter are needed.
+%
 \subsection{MIT bag model}
-
-The MIT bag model is an effective model that describes, in a phenomenological way, quarks and gluons confined within the hadrons. Even if based on very simple hypothesis, the MIT bag model allows to give a description of confinement and phase transition, giving rough estimations of the critical temperature $T_{C}$, corresponding to the transition from deconfined to confined strong interacting matter. In the MIT bag model quarks are seen as massless fermions inside a spherical bag of finite dimensions, whose confinement is due to the balance between the pression exerted from the particles on the bag, coming from their kinetic energy, and an external pressure \textit{ad hoc} introduced, which takes into account effects that cannot be calculated through a perturbative approach. Considering these hypotheses, it is possible to evaluate the pressure on the bag for a confined state.\\
-The equation of motion for a massless fermion is the Dirac equation:
+The MIT bag model is an effective model that describes, in a phenomenological way, quarks and gluons confined within the hadrons. Even if based on very simple hypotheses, the MIT bag model allows to give a description of confinement and phase transition, giving rough estimations of the critical temperature $T_{C}$, corresponding to the transition from deconfined to confined strong interacting matter. In the MIT bag model quarks are seen as massless fermions inside a spherical bag of finite dimensions, whose confinement is due to the balance between the pression exerted from the particles on the bag, coming from their kinetic energy, and an external pressure introduced \textit{ad hoc}, which takes into account effects that cannot be calculated through a perturbative approach. Considering these hypotheses, it is possible to evaluate the pressure on the bag for a confined state.\\
+The equation of motion for massless non interacting fermions is the Dirac equation:
 %
 \begin{equation}
   \gamma^{\mu}p_{\mu}\psi=0
@@ -122,18 +176,17 @@ From this equation, the radius of the bag and the external pressure B can be det
   \frac{dE}{dR} = -\frac{2.04 \hbar c}{R^{2}} + 4 \pi R^{2} B = 0 \ \ \ \longrightarrow \ \ \ B^{\frac{1}{4}} = \frac{\hbar c}{R}\Big(\frac{2.04N}{4\pi}\Big)^{\frac{1}{4}}
 \end{equation}
 %
-Considering a baryon composed of three valence quarks, with a radius of 0.8 fm, the value of the fourth root of the external pressure is $B^{\frac{1}{4}} = 206 \; $MeV$ / (\hbar c)^{3/4}$. In this way, the effects of non perturbative QCD are included in the external pressure B, expressly introduced for this reason, and this pressure is balanced from the internal pressure exerted by the quarks. According to the MIT bag model, the phase transition can be seen as the increase of the internal pressure to the point at which it overcomes the external one, giving birth to a new phase in which quarks are no more confined within hadrons, but free to move in a bigger volume: the state of QGP is therefore enhanced.\\
+Considering a baryon composed of three valence quarks, with a radius of 0.8 fm, the value of the fourth root of the external pressure is $B^{\frac{1}{4}} = 206 \; $MeV$ / (\hbar c)^{3/4}$. The effects of non perturbative QCD are included in the external pressure B and this pressure is balanced from the internal pressure exerted by the quarks. According to the MIT bag model, the phase transition can be seen as the increase of the internal pressure to the point at which it overcomes the external one, giving birth to a new phase in which quarks are no more confined within hadrons, but free to move in a bigger volume: the state of QGP is therefore enhanced.\\
 The internal pressure can increase in two ways: by compression, i.e. increasing the baryonic density, or by increasing the temperature, i.e the kinetic energy of the quarks. Focusing on the latter, it is possible to obtain the temperature at which the phase transition occurs, requiring the external pressure to match the internal one: 
 %
 \begin{equation}
   P = 37 \frac{\pi^{2}}{90}T^{4}_{C} = B \ \ \ \longrightarrow \ \ \ T_{C} = \Big(\frac{90B}{37\pi^{2}}\Big)^{\frac{1}{4}}= 145 \ MeV
 \end{equation}
 %
-As far as concerns the MIT bag model, a transition from nuclear matter to QGP is expected at $T_{C} = 145$ MeV. However, as already said, this result comes from simple hypotheses and, for this reason, a more precise result can be obtained using more sophisticated methods, such as lattice QCD, which will be discussed in the next section.\\
+With the MIT bag model, a transition from nuclear matter to QGP is expected at $T_{C} = 145$ MeV. However, as already said, this result comes from simple hypotheses and, for this reason, a more precise result can be obtained using more sophisticated methods, such as lattice QCD, which will be discussed in the next section.\\
 
 \subsection{Lattice QCD}
-%
-Lattice QCD is the main tool to study non-perturbative aspects of QCD and is based on the discretization of the space-time, treated, indeed, as a lattice. This theory offers important advantages: first of all, if in the perturbative approach there is the problem of the divergence of the integrals with respect to the momentum for large values of this, which can be solved using a renormalization method, in lattice QCD this problem does not exist because the pitch of the lattice defines a minimum distance and consequently a cut-off value for the momentum. Then, the lattice partition function can be written as a path integral and, therefore, easily calculated, for example using Monte Carlo methods. On the other hand, the computational cost of numerical simulations can increase dramatically as the lattice spacing decreases, causing a constrain on the minimum pitch to use for the calculations. Moreover, in order to reduce the computational burden, further approximation are needed. For example, one of the most common approximation is the so called \textit{pure gauge}, in which quarks are considered as static sources of the colour field, fixed in the knots of the lattice, that is equivalent to considering the masses of the quarks infinite. Corrections to include the finite masses of the quarks and a not-null baryo-chemical potential are possible but under development.\\
+Lattice QCD is the main tool to study non-perturbative aspects of QCD and is based on the discretization of the space-time, treated, indeed, as a lattice. This approach offers important advantages: first of all, if in the perturbative approach there is the problem of the divergence of the integrals for large values of the momentum, which can be solved using a renormalization method, in lattice QCD this problem does not exist because the pitch of the lattice defines a minimum distance and consequently a cut-off value for the momentum. The lattice partition function can be written as a path integral and therefore calculated, for example using Monte Carlo methods. On the other hand, the computational cost of numerical calculations can increase dramatically as the lattice spacing decreases, causing a constrain on the minimum pitch to use for the calculations. Moreover, in order to reduce the computational burden, further approximation are needed. For example, the first approximation used is the so called \textit{pure gauge}, in which quarks are considered as static sources of the colour field, fixed in the knots of the lattice, that is equivalent to considering the masses of the quarks infinite. Corrections to include the finite masses of the quarks and a not-null baryo-chemical potential are possible but under development.\\
 In order to explain the basics of lattice QCD, the quantum mechanics case will be first considered for simplicity; then, it will be extended to quantum field theory.
 The grand canonical partition function of the system at a temperature T can be written as:
 %
@@ -161,24 +214,24 @@ The last step is the extension to the quantum field theory:
 \end{equation}
 %
 The most efficient numerical approach to calculate path integrals is to estimate thermal averages over specific paths, which are identified using Monte Carlo algorithms of importance sampling. Then, the path integrals are evaluated introducing a four-dimensional space-time lattice, whose spacing is the smallest permitted by the computational limits.\\
-As already said before, using lattice QCD it is possible to get more precise prediction about the phase transition, but its characteristics are, for example, strongly dependent on the treatment of quark masses and precise calculations are available only in the limit of vanishing baryo-chemical potential ($\mu_{B}\sim0$). In particular, in the limit of two quarks flavours with null mass, a second-order transition is predicted, while a first-order one is foreseen in case of three massless quarks. However, recent calculations of lattice QCD predict a critical an estimated temperature $T_{C}\approx160$ MeV, corresponding to an energy density $\epsilon_{C} = 0.7 \pm 0.3$ GeV$/fm^{3}$\cite{lattice}.
+Using lattice QCD it is possible to get more precise predictions about the phase transition, but its characteristics are, for example, strongly dependent on the treatment of quark masses and precise calculations are available only in the limit of vanishing baryo-chemical potential ($\mu_{B}\sim0$). In particular, in the limit of two quarks flavours with null mass, a second-order transition is predicted, while a first-order one is foreseen in case of three massless quarks. However, recent calculations of lattice QCD predict a critical temperature $T_{C}\approx160$ MeV, corresponding to an energy density $\epsilon_{C} = 0.7 \pm 0.3$ GeV$/fm^{3}$\cite{lattice}.
 
 \section{Heavy ions collisions}
-In order to study the properties of the QGP, it is necessary to create a system of strongly interacting matter at extreme conditions of temperature and energy density, which could be described using the thermodynamics. For this reason, this system should be characterized by a wide spatial extension, so that it could be described using macroscopic variables, such as the temperature or the pressure. Therefore, first, the system must have an extension which must be much greater than the strong interaction scale ($\sim$ 1 fm); then, it must be characterized by a great number of particles (high multiplicity). Furthermore, the system must be long lived, so that a high number of collisions between the constituents can occur and lead to thermal equilibrium, necessary for using a thermodynamic approach. The thermal equilibrium is reached when the free mean path of the constituents ($\tau_{path}$) is greater than the system dimension and smaller than the life time of the system ($\tau_{system}\gg\tau_{path}$). These hypothesis has to be verified comparing the theoretical prediction with the experimental data. However, in high energy nucleus-nucleus collisions, all these requirements are expected to be fulfilled, thanks to the multiple collisions between nucleons of the colliding nuclei. In facts, a nucleon collides with many nucleons in the other nucleus, releasing energy. For this reason, there is a large energy deposit in the interaction region, determining a high energy density of the system and, therefore, a high temperature. Moreover, a large number of primary particles is produced, determining the high multiplicity required as hypothesis.\\
+In order to study the properties of the QGP, it is necessary to create a system of strongly interacting matter at extreme conditions of temperature and energy density, which could be described using the thermodynamics. This system should be characterized by a wide spatial extension, so that it could be described using macroscopic variables, such as the temperature or the pressure. First, the system must have an extension which must be much greater than the strong interaction scale ($\sim$ 1 fm); then, it must be characterized by a great number of particles (high multiplicity). Furthermore, the system must be long lived, so that a high number of collisions between the constituents can occur and lead to thermal equilibrium, necessary for using a thermodynamic approach. These hypotheses have to be verified comparing the theoretical prediction with the experimental data. However, in high energy nucleus-nucleus collisions, all these requirements are expected to be fulfilled, thanks to the multiple collisions between nucleons of the colliding nuclei. Indeed a nucleon collides with many nucleons in the other nucleus, releasing energy: there is a large energy deposit in the interaction region, determining a high energy density of the system and a high temperature. Moreover a large number of primary particles is produced, determining the high multiplicity required as hypothesis.\\
 In the next sections, it will be shown how to describe nucleus-nucleus collisions and how this kind of events evolves.\\
-
+%
 \subsection{Glauber Model}
 The Glauber Model provides a description of the nucleus-nucleus interaction as an incoherent superposition of nucleon-nucleon collisions.
-The key element of the Glauber model is the impact parameter $\vec{b}$, a geometrical parameter defined as the distance between the centres of the two nuclei in the transverse plane. The impact parameter is important because it determines the centrality of the collision. Central collisions are characterized by a small impact parameter: in this kind of events many nucleons are involved in the interaction and, therefore, there are many collisions between nucleons and many particles are produced. Peripheral collisions, instead, are characterized by a large impact parameter: the overlap region is smaller and so there are few nucleons involved in the interaction, hence few collisions between nucleons and few particles produced.\\
+The key element of the Glauber model is the impact parameter \textit{b}, a geometrical parameter defined as the distance between the centres of the two nuclei in the transverse plane. The impact parameter is important because it determines the centrality of the collision. Central collisions are characterized by a small impact parameter: these events many nucleons are involved in the interaction and, therefore, there are many collisions between nucleons and many particles are produced. Peripheral collisions, instead, are characterized by a large impact parameter: the overlap region is smaller and so there are few nucleons involved in the interaction, hence few collisions between nucleons and few particles produced.\\
 The Glauber Model is based on few assumptions, also known as \textit{optical limit}:
 \begin{itemize}
  \item the nucleons are point like;
  \item the nucleons inside the nuclei are independent;
  \item the nuclei, hence the constituent nucleons, travel in a straight line: there are no deflections;
  \item only the strong interaction is considered: protons and neutrons cannot be distinguished;
- \item the cross section for an elementary nucleon-nucleon interaction is the same for all the passage of the nucleon through the target.
+ \item the cross section for an elementary nucleon-nucleon interaction is constant during the passage of the nucleon through the target.
 \end{itemize}
-During the collisions we can distinguish two kinds of nucleons: the spectators are those nucleons that do not interact with any nucleon of the other nucleus; the participants are the nucleons which have interacted at least with a nucleon of the other nucleus.\\
+During the collisions we can distinguish two kinds of nucleons: the spectators are those nucleons that do not the part in the interaction; the participants are the nucleons which have interacted at least with a nucleon of the other nucleus.\\
 Even if this model is based on simple hypotheses, it allows to get much information, such as the probability of interaction, the number of elementary collisions, the number of participant nucleons, the number of spectators, etc.
 %
 \begin{figure}
@@ -199,8 +252,8 @@ The rapidity is the parameter that arises in the linear representation of a Lore
     \end{array}
   \right) = 
       \begin{pmatrix}
-      \cosh y & \sinh y \\
-      \sinh y & \cosh y 
+      \cosh y & -\sinh y \\
+      -\sinh y & \cosh y 
     \end{pmatrix}
   \;
   \left(
@@ -219,21 +272,20 @@ However, from an experimental point of view, the determination of the rapidity r
 \begin{equation}
  \eta = \frac{1}{2}\ln\frac{|\vec{p}\:| + p_{z}}{|\vec{p}\:| - p_{z}} = - \ln [\tan (\theta/2)]
 \end{equation}
-In the high energy limit, it can be shown that $\lim_{\beta \to c} \eta \;= \;y$.\\
+In the high energy limit, i.e. if $p \sim E$, $\eta \longrightarrow y$.\\
 These two parameters are extremely important, since many variables, like, for example, the multiplicity, are described in terms of rapidity or pseudorapidity.\\
-
-
+%
 \section{Evolution of nucleus-nucleus collisions}
 The collision between two ultra-relativistic nuclei is an event characterized by a complex space-time evolution: a scheme of this process can be found in Figure \ref{fig:evol}.\\
 Before the collision takes place, the two nuclei travel along the beam direction at a speed close to the speed of light and, for this reason, they are Lorentz-contracted. This means that the two nuclei can be represented as two disks.\\
-At $t=0$, the two nuclei collide, hence scatterings between the nucleons of the projectile and of the target take place. In each of this collision, the nucleons lose energy ad momentum and, in case of inelastic scattering, they could become unstable baryon-like objects. Withal, at the LHC energies, after the interactions these products still have enough energy to escape the interaction region, which, in the case of a symmetric collider such as the LHC, is the mid rapidity region ($y\sim0$), and decay far away from this region. Therefore, for high energy collisions, the mid-rapidity region is characterized by a high energy density, with the generation of $q\bar{q}$ pairs, but with a low baryonic content, i.e. a vanishing baryo-chemical potential ($\mu_{B}\sim$ 0). All together these conditions form the so called \textit{transparency regime}. The transparency regime is characterized by a large number of particle for unity of rapidity ($\frac{dN}{dy}$) in the mid rapidity region. Therefore, in these distributions a plateau around $y\sim0$, whose width and height is determined by the energy of the collision, is expected.\\
-If the temperature of the medium created is larger than a critical value $T_{C}$, the formation of a system of deconfined quarks and gluons is expected. The QGP could be initially not in thermal equilibrium but, thanks to the high number of scatterings, it should thermalize at a proper time $\tau_{0}$, whose value strongly depends on the centre of mass energy of the experiment. At the LHC energies, for example, $\tau_{0}<$ 0.2 fm/c. After $\tau_{0}$, the system is expected to evolve according to the hydrodynamics: the plasma expands and for this reason the temperature decreases until it reaches the critical value $T_{C}$ and the process of hadronization starts. In case of first order transition, the system is characterized by a mixed phase, where the QGP coexists along with confined hadronic matter. This mixed phase lasts for a time $\tau\sim$ 10 fm/c, after which the system appears as a gas of hadrons, in which a large number of scatterings, both elastic and inelastic, can take place.
-When the temperature reaches values for which the inelastic scatterings are not possible anymore, the chemical composition is fixed: this moment is called chemical freeze-out and occurs at a temperature $T_{ch}$. After the chemical freeze-out, the system continue expanding and the elements interact via elastic scatterings until the temperature drops below the vale $T_{kin}$, at which the thermal freeze-out occurs. After the thermal freeze-out, the hadrons finally stream out of the collision region. Typical values of the chemical and thermal freeze-out temperatures, estimated at the LHC in central Pb-Pb collisions at $\sqrt{s_{NN}} =$ 2.76 TeV, are $T_{ch}\sim$ 160 MeV and $T_{kin}\sim$ 100 MeV \cite{temp}.
+At $t=0$, the two nuclei collide, hence scatterings between the nucleons of the projectile and of the target take place. In each of these collisions, the nucleons lose energy ad momentum and, in case of inelastic scattering, they could become unstable baryon-like objects. In addition, at the LHC energies, after the interactions these products still have enough energy to escape the interaction region, which, in case of a symmetric collider such as the LHC, is the mid rapidity region ($y\sim0$), and decay far away from this region. For high energy collisions, the mid-rapidity region is characterized by a high energy density, with the generation of $q\bar{q}$ pairs, but with a low baryonic content, i.e. a vanishing baryo-chemical potential ($\mu_{B}\sim$ 0). All together these conditions form the so called \textit{transparency regime}. The transparency regime is characterized by a large number of particle for unity of rapidity ($\frac{dN}{dy}$) in the mid rapidity region. In these distributions a plateau around $y\sim0$, whose width and height is determined by the energy of the collision, is expected.\\
+If the temperature of the medium created is larger than a critical value $T_{C}$, the formation of a system of deconfined quarks and gluons is expected. The QGP could be initially not in thermal equilibrium but, thanks to the high number of scatterings, it should thermalize at a proper time $\tau_{0}$, whose value strongly depends on the centre of mass energy of the experiment. At the LHC energies, for example, $\tau_{0}<$ 0.2 fm/c. After $\tau_{0}$, the system is expected to evolve according to hydrodynamics: the plasma expands and the temperature decreases until it reaches the critical value $T_{C}$ and the process of hadronization starts. In case of first order transition, the system is characterized by a mixed phase, where the QGP coexists along with confined hadronic matter. The mixed phase lasts for a time $\tau\sim$ 10 fm/c, after which the system appears as a gas of hadrons, in which a large number of scatterings, both elastic and inelastic, can take place.
+When the temperature reaches values for which the inelastic scatterings are no longer possible, the chemical composition is fixed: this moment is called chemical freeze-out and occurs at a temperature $T_{ch}$. After the chemical freeze-out, the system continues expanding and the hadrons interact via elastic scatterings until the temperature drops below the vale $T_{kin}$, at which the thermal freeze-out occurs. After the thermal freeze-out, the hadrons finally stream out of the collision region. Typical values of the chemical and thermal freeze-out temperatures, estimated at the LHC in central Pb-Pb collisions at $\sqrt{s_{NN}} =$ 2.76 TeV, are $T_{ch}\sim$ 160 MeV and $T_{kin}\sim$ 100 MeV \cite{temp}.
 %
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{figures/dNdeta.png}
-  \caption{Charged particle multiplicity distributions for collisions at RHIC with four different energies as a function of pseudorapidity\cite{dndeta}.}
+  \includegraphics[scale=0.4]{figures/dNdeta.png}
+  \caption{Measurement of $dN_{ch}/d\eta$ for all centralities and a broad $\eta$ range. Combined and symmetrised $dN_{ch}/d\eta$ over 30-90\% centrality from both SPD and FMD (circles)\cite{dndeta}.}
   \label{fig:dndeta}
 \end{figure}
 %
@@ -248,26 +300,26 @@ When the temperature reaches values for which the inelastic scatterings are not 
 %
 \clearpage
 \section{Experimental observables in ALICE}
-Since the QGP, from an experimental point of view, is characterized by a short life time (few $10^{-23}$ s), the direct measurement of variables such as, for example, temperature, is not possible. Indeed, the only accessible variables are those that characterize the final state, i.e. those related to the particles present in the last stage of the collision process, as previously described. For this reason, the theoretical models are extremely important to define which characteristics of the final state could provide information about the QGP formation and the phase transition. In facts, comparing the experimental measurements with the theoretical predictions, it is possible to indirectly determine important quantities, which are parameters of the theoretical models, related to stages of the evolution of the system otherwise not accessible.\\
-These quantities can be measured considering different kinds of probes: electroweak probes and hadronic probes. The formers (dielectrons and direct photons) are related to the early stages of the evolution of the fireball. In facts, they do not interact strongly and so they can pass through the generated medium unharmed. However, they are less abundant then the hadronic probes and, concerning the direct photons, it is difficult to divide these from the background generated in the following stages. The hadronic probes, otherwise, are more abundant but are influenced by the medium and by the final state effects. Consequently, it is difficult to distinguish particles produced in the earliest stages of the collision from those generated in later stages or in hadronic processes.\\
-It is also possible to make another distinction among the probes, according to the value of the transferred momentum of the process in which they have been generated.\\
-The hard probes are produced in the first stages of the collision, when the energy of the system has not degraded yet, in processes characterized by a high momentum transfer, like, for example, the interaction between high momentum partons. They are rare processes, whose number scales with the number of collisions among the nucleons constituting the projectile and the target nuclei, and are sensible to the following stages of the collision. The soft probes, instead, are produced in the last stages of the collisions, by processes characterized by a low momentum transfer. For this reason, they cannot resolute the the partonic structure of the nucleons. However, even if they are produced during the hadronic stage, they keep indirect information on the properties of the phase transition and on the QGP. Then, the soft probes constitute the bulk of the hadrons produced in the collision, above the 99$\%$.\\
-In the next sections, the most important observables for ALICE will be described.\\
+Since the QGP, from an experimental point of view, is characterized by a short life time (few $10^{-23}$ s), the direct measurement of the variables necessary to describe the system is not possible. This quantities can be obtained indirectly measuring the variables that characterize the final state, i.e. those related to the particles present in the last stage of the collision process. The theoretical models are extremely important to define which characteristics of the final state could provide information about the QGP formation and the phase transition. Comparing the experimental measurements with the theoretical predictions, it is possible to determine indirectly important quantities related to the early stages of the evolution of the system as parameters of the theoretical model.\\
+These quantities can be measured considering different kinds of probes: electroweak probes and hadronic probes. The formers (dielectrons and direct photons) are related to the early stages of the evolution of the fireball. They do not interact strongly and so they can pass through the generated medium unharmed. However, they are less abundant then the hadronic probes and, concerning the direct photons, it is difficult to separate these from the background generated in the subsequent stages. The hadronic probes are more abundant but are influenced by the medium and by the final state effects. Moreover they have different behaviours according to the process in which they are generated. \\
+The hard probes are produced in processes characterized by a high momentum transfer. These probes include \textit{heavy-flavoured hadrons} (containing \textit{c} or \textit{b} quarks), high momentum hadrons and jets, which are collimated emissions of hadrons generated by the fragmentation of a high-$p_T$ parton. The hard probes can be only produced during the first stages of the collision, when the energy of the system has not degraded yet. They are sensitive to the following stages of the collision and therefore from their study it is possible to obtain important information about the evolution of the system since the earliest stages. However, they are rare events, being a very small part of the hadrons produced in the collision (< 1\%).\\
+The soft probes, instead, are produced in processes characterized by a low momentum transfer and therefore are made up of light quarks. They constitute the bulk of the hadrons produced in the collision, above 99\%. The soft probes are produced during the hadronization, since in the early stages of the collision, characterized by a high energy density, a large number of inelastic scattering occurs and hadrons are continuously destroyed and formed. Studying the abundances of the hadronic species in the final state it is possible to get important information about the system evolution, such as the temperature of the chemical and thermal freeze-out.\\ 
+In the next sections, the most important observables measured by ALICE will be described.\\
 \subsection{Particle multiplicity}
-The multiplicity is the number of particles produced in a collision. Two kinds of multiplicity measurements can be distinguished: the multiplicity of not identified particles, i.e. the total number of particles produced, and the multiplicity of identified particles, i.e. the number of particles of a certain species.
+The multiplicity is the number of prompt particles produced in a collision. Two kinds of multiplicity measurements can be carried out: the multiplicity of not identified particles, i.e. the total number of particles produced, and the multiplicity of identified particles, i.e. the number of particles of a certain species.
 \subsubsection{Multiplicity of not identified particles}
-In the study of the collisions between nuclei, this quantity is extremely important, since it gives information about the centrality of the collision, the energy density of the final state and the mechanisms of particles production. Moreover, it is also an important parameter for the design of an experiment for the study of ions collisions, since the occupancy of the detectors is closely related to the density of particles, hence to the multiplicity. Similarly, the radiation damage is related to the flow of the particles through the detectors and the readout electronics. As far as concerns the ALICE experiment, this was designed to run with multiplicity up to 8000 particles per unit of rapidity in the mid-rapidity region. However, this estimation was made in a period when RHIC multiplicity data were not available and happened to be overestimated, since the measured value is approximately 1600 charged particles per rapidity unity\cite{mult}.\\  
-As mentioned before, the multiplicity is related to the centrality of the collision, i.e. to the value of the impact parameter. In facts, for the Glauber Model, both the number of elementary collisions and the number of participant nucleons are related to the impact parameter. Since in each elementary collision there is a release of energy, each collision contributes to the production of particles, then to the multiplicity. Typically, the measure of the total cross section per charged particle as a function of the charged multiplicity is used to express the centrality, as shown in Figure \ref{fig:centr}: it is expressed as the percentage of area under curve.\\
+In the study of the collisions between nuclei, this quantity is extremely important, since it gives information about the centrality of the collision, the energy density of the final state and the mechanisms of particle production. Moreover, it is also an important parameter for the design of a heavy-ion collision experiment, since the occupancy of the detectors is closely related to the density of particles, hence to the multiplicity. Similarly, the radiation damage is related to the flow of the particles through the detectors and the readout electronics. As far as the ALICE experiment is concerned, it was designed to run with multiplicity up to 8000 particles per unit of rapidity in the mid-rapidity region. However, this estimation was made in a when RHIC multiplicity data were not yet available and happened to be overestimated, since the measured value is approximately 2000 charged particles per rapidity unity at 5.02 TeV\cite{mult}.\\  
+The multiplicity is related to the centrality of the collision, i.e. to the value of the impact parameter. For the Glauber Model, both the number of elementary collisions and the number of participant nucleons are related to the impact parameter. Since in each elementary collision there is a release of energy, each collision contributes to the production of particles, then to the multiplicity. Typically, the measure of the total cross section per charged particle as a function of the charged multiplicity is used to express the centrality, as shown in Figure \ref{fig:centr}: it is expressed as the percentage of the area under the curve.\\
 %
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{figures/star.png}
-  \caption{A typical event multiplicity distribution at RHIC, sliced up in centrality classes.}
+  \includegraphics[scale=0.14]{figures/cenclasses.png}
+  \caption{Distribution of the sum of amplitudes in the two VZERO arrays (black histogram) in Pb-Pb collisions at sNN=2.76 TeV. The red line shows the fit with a Glauber model. The shaded areas define the different centrality classes of hadronic collisions. The insert shows the low amplitude part of the distribution.\cite{cenclasses}.}
   \label{fig:centr}
 \end{figure}
 %
-Then, the measurement of the charged multiplicity per pseudorapidity unity at mid-rapidity allows an estimation of the energy density of the QGP, using a method proposed by Bjorken.\\
-According to this method, in the frame in which both the colliding nuclei have high energy, the projectile and the target, that are Lorentz contracted, can be seen as two disks that rapidly pass through each other. Then, secondary particles are generated in this region bounded by the two disks, which is characterized by a low longitudinal extension. A scheme of this model can be seen in Figure \ref{fig:bjor}.\\
+Then, the measurement of the charged multiplicity density at mid-rapidity allows an estimation of the energy density of the QGP, using a method proposed by Bjorken\cite{bjorken}.\\
+According to this method in the centre of mass frame the projectile and the target, which are Lorentz contracted, can be seen as two disks that rapidly pass through each other. Secondary particles are generated in the overlap region, which is characterized by a low longitudinal extension. A scheme of this model can be seen in Figure \ref{fig:bjor}.\\
 %
 \begin{figure}
   \centering
@@ -289,20 +341,21 @@ Summing up, at mid-rapidity the energy density can be determined using the Bjork
 \begin{equation}
  \epsilon_{Bj}\;=\; \frac{1}{\tau_{0} A}\frac{dE_{T}}{dy}\Big|_{y=0}\;\sim\;\frac{1}{\tau_{0} A}\langle E_{T} \rangle \frac{dN}{d\eta}\Big|_{\eta=0}
 \end{equation}
-Measuring the pseudorapidity density $\frac{dN}{d\eta}$ and the average hadron energy transverse energy $\langle E_{T} \rangle$, which can be obtained experimentally by measuring the energy of charged hadrons, if an estimation of the time of formation $\tau_{0}$ is given, the energy density can be easily determined. ALICE obtained for Pb-Pb collisions in the centrality range 0-5 \% $\epsilon_{Bj} \approx$ 16 GeV/fm$^{3}$, considering a formation time $\tau_{0}$ = 1 fm/c. The energy density is so well above the critical energy density $\epsilon_{C} \sim$ 1 GeV/fm$^{3}$ expected for the phase transition according to the lattice QCD calculations.\\
-Finally, it is interesting to compare the charged multiplicity, normalized using the number of participants nucleons, in ions collisions with the value obtained in p-p collisions. The normalization factor is important for this comparison, since in p-p collisions there are always two participants, while in ion collisions the number of participants depends on the centrality of the event and, for this reason, it is important to fix the centrality range.
+Measuring the pseudorapidity density $\frac{dN}{d\eta}$ and the average hadron energy transverse energy $\langle E_{T} \rangle$, which can be obtained experimentally by measuring the energy of charged hadrons, provided that an estimate of $\tau_{0}$ is given, the energy density can be easily determined. ALICE obtained for Pb-Pb collisions in the centrality range 0-5 \% $\epsilon_{Bj} \approx$ 16 GeV/fm$^{3}$, considering a formation time $\tau_{0}$ = 1 fm/c. The energy density is so well above the critical energy density $\epsilon_{C} \sim$ 1 GeV/fm$^{3}$ expected for the phase transition according to the lattice QCD calculations.\\
+Finally, it is interesting to compare the charged multiplicity, normalized using the number of participants nucleons, in heavy-ion collisions with the value obtained in p-p collisions. The normalization factor is important for this comparison, since in p-p collisions there are always two participants, while in ion collisions the number of participants depends on the centrality of the event and, for this reason, it is important to fix the centrality range.
 %
 \begin{figure}
   \centering
   \subfloat[][]
-  {\includegraphics[scale=0.3]{figures/multen.png}\label{fig:multen}}\quad
+  {\includegraphics[scale=0.12]{figures/multen.png}\label{fig:multen}}\quad
   \subfloat[][]
   {\includegraphics[scale=0.35]{figures/phenix.png}\label{fig:phenix}}
-  \caption{(a) Charged pseudorapidity density per participant pair for nucleus-nucleus and p-p collisions, as a function of $\sqrt{s_{NN}}$ \cite{multen}. (b) Ratio between pseudorapidity energy density and pseudorapidity density as a function of the number participants for different values of $\sqrt{s_{NN}}$ at PHENIX experiment.}
+  \caption{(a) Values of $dN/d\eta$ normalized by the average number of participant pairs for central Pb-Pb and Au-Au collisions as a function of $\sqrt{s_{NN}}$ \cite{multen}. (b) Ratio between pseudorapidity energy density and pseudorapidity density as a function of the number participants for different values of $\sqrt{s_{NN}}$ at PHENIX experiment.}
 \end{figure}
 %
 In Figure \ref{fig:multen}, the pseudorapidity per participant pair is shown as a function of the energy $\sqrt{s_{NN}}$: the particle production trend is steeper in AA than what obtained in p-p collisions.\\
 Then, considering the ratio between the energy pseudorapidity density $\frac{dE}{d\eta}$ and  the pseudorapidity density $\frac{dN}{d\eta}$ as a function of the number of participants, it can be seen that this quantity does not change much with $\sqrt{s_{NN}}$. This means that the extra energy goes into the production of new particles rather than into kinetic energy.\\
+%
 \subsubsection{Multiplicity of identified particles}
 The measurement of the multiplicity of the hadronic species. i.e. of the chemical composition of the system after the hadronization, allows to get important information about the state of the system at the chemical freeze-out, like, for example, whether the fireball was at the equilibrium or not, the temperature and the baryonic content.\\
 The abundances of the different hadronic species produced in an ion collision can be described using the so called \textit{statistical thermal model}, which is based on the hypothesis that the system is at chemical and thermal equilibrium when the chemical freeze-out occurs. With this assumption, it is possible to describe the system using the statistical mechanics, in particular using a grand canonical ensemble with two parameters, the temperature and the baryo-chemical potential. It is important to note that the equilibrium is postulated: this model does not describe the evolution of the collision till the phase transition and not even how this transition takes place. It is a merely statistical equilibrium, due to the way in which the hadronization fills the phase space, realizing the most probable configuration. Secondly, the system is described as an ideal gas of hadrons and resonances (\textit{Hagedorn's gas}, from the name of the scientist who has developed the model). It contains all the degrees of freedom of a strongly interacting confined system, for not too high temperatures (T < 190 MeV). With this method, a gas of interacting hadrons is approximated by a gas of non interacting hadrons and resonances.\\
@@ -361,6 +414,7 @@ However, in nuclei collisions the $m_{T}$ is broken. In facts, as it can be seen
 \end{equation}
 This collective expansion in the transverse plane is called radial flow. This collective motion is generated by the high pressures generated when the nuclear matter is compressed and heated and, in the case of central collisions, this flow is characterized by a circular symmetry on the azimuthal angle in the transverse plane.\\
 Fitting the spectra of identified particles, it is possible to separate the thermal component from the collective one, obtaining the freeze-out temperature $T_{fo}$ and the radial speed $\beta_{\perp}$. At the ALICE experiment, the temperature of the thermal freeze-out is $T_{fo} \approx$ 110 - 130 MeV.\\
+%
 \subsubsection{Anisotropic flow}
 While in central collision the radial flow is characterized by an azimuthal symmetry in the transverse plane, fer semi-central collisions the overlap between the colliding nuclei has an asymmetric almond shape, so the pressure gradients inside the generated medium lead to anisotropies in $\phi$. In facts, the impact parameter generates a favoured direction in the transverse plane: the impact parameter and the beam direction define the so called \textit{reaction plane}, identified by the angle $\Psi_{RP}$ in the transverse plane.\\
 %
@@ -383,6 +437,7 @@ The coefficients of the harmonics, which are given by the expression:
 \end{equation}
 describe different kinds of anisotropies: $\nu_{1}$, for example, is the \textit{direct flow} coefficient and describes an asymmetry between forward and backward particle production; $\nu_{2}$, instead, is the elliptic flow, which describes the difference between the number of particle emitted in the reaction plane and in the direction orthogonal to it. For the other coefficients, the situation is similar.\\
 The geometrical anisotropy, which is the origin of the elliptic flow, attenuates with the evolution of the system, since the gradients of pressure, which are responsible for this asymmetry, are stronger in the first instants of the collision. Therefore, the measurement of the elliptic flow allows to get information about the state equation of the system in the early stages of the collision, being a good test for hydrodynamic models which describe the evolution of the medium. According to the to the measure of the anisotropic flow, the QGP seems to behave like a perfect fluid, rather than like a perfect gas, as one could expect.\\
+%
 \subsection{Nuclear modification factor}
 The remaining observables used at the ALICE experiment are hard probes, i.e. particles generated in the first stages of the collision, in processes with an high momentum transfer. For this reason, hard probes can give important information about the properties of the medium, even if they are rare events (< 0.1\%).\\
 In order to understand the differences between p-p and nuclei collision, it is important two compare the results of the formers with those of the latters.\\
@@ -402,6 +457,7 @@ For low values of the transverse momentum ($p_{T} \lesssim$ 2 GeV), $R_{AA}$ < 1
 where $\alpha_{S}$ is the QCD coupling constant, $C_{R}$ is the Casimir factor, whose value is 4/3 for a quark-gluon coupling and 3 for a gluon-gluon 
 one, $\hat{q}$ is the transport coefficient, related to the properties of the medium and proportional to the density and the momenta of the gluons. \textit{L}, finally, is the distance travelled by the particle in the medium. This formula parametrizes the energy loss through the emission of gluons and this gives an explanation of the dependence from $L^{2}$, since the gluons can also interact with the medium.\\
 In the next sections, the main hard probes observed at ALICE will be described.\\
+%
 \subsection{Jet quenching}
 A jet is a collimated emission of hadrons, which originates from fragmentation of a high-$p_{T}$ parton. These partons are created back to back in the initial collision and they form hadrons during the hadronization. For this reason, in small systems, such as in p-p collisions, two jets of hadrons emitted in opposite directions are usually seen. In ion collisions, however, the situation in different, since the high energy parton can interact with the medium and, consequently, lose energy as previously described.
 %
@@ -414,9 +470,11 @@ A jet is a collimated emission of hadrons, which originates from fragmentation o
 %
 Hence, for ion collisions, the azimuthal distribution of high momentum particles is strongly dependent on the point of creation of the pair $q\bar{q}$. Indeed, if the partons are produced inside the fireball, they are slowed down while exiting the medium and so they hadronize in low $p_{T}$ particles. Otherwise, if the pair is produced on the surface of the fireball, the hadron whose momentum is directed outwards hadronizes in a high $p_{T}$ particle, i.e. creates a jet that can be detected, while the parton emitted inwards travels through the whole fireball, losing energy and hadronizing in a low $p_{T}$ particle. Therefore, the study of azimuthal angle correlation between two high $p_{T}$ particles can give important information about the creation of a hot and dense medium.\\
 In Figure \ref{fig:jet}, the measures of the azimuthal correlation are reported for p-p, d-Au and Au-AU collisions for the STAR experiment. As it can be seen, for the first two kinds of collision there are two jets emitted back to back, while for heavy ions collisions one of the jets is suppressed. This can be considered a proof of the creation of a hot and dense medium, such as the QGP.\\
+%
 \subsection{Open heavy flavours}
 Particles constituted by a heavy quark, i.e. charm and beauty, are called \textit{open heavy flavours}. Considering the great mass value of the heavy quarks ($m_{b}\sim$ 4.8 GeV and $m_{c}\sim$ 1.2 GeV), they can only be produced in the initial stages of the collision, in scatterings with a high momentum transfer between partons. For this reason, their production con be described using the perturbative QCD till very low values of transverse momentum. This kind of measurements is used both in p-p collisions, in order to test the theoretical model based on the perturbative QCD and to have a reference for the $R_{AA}$ determination, and in heavy ion collisions, in order to test the energy loss models.\\
 In particular, the energy loss models predict a different loss for hadrons containing heavy quarks compared to light hadrons. This is explained with the different origin of the two types: heavy flavours are generated from a quark fragmentation, while light flavours are mainly produced from gluons. Then, the is the so called \textit{dead cone effect} \cite{deadcone}: the gluon radiation is suppressed at small angles (with respect to the direction of motion) for heavy quarks. In particular, being $E_{Q}$ and $M_{Q}$ respectively the energy and the mass of the heavy quark, the suppression is predicted for angles $\theta<\frac{M_{Q}}{E_{Q}}$. Therefore, the energy loss for light flavours is bigger than in heavy flavours, and the energy loss loss of a particle with a charm quark is bigger than that of a particle with a beauty. The measures of $R_{AA}$ seem to confirm this behaviour for charmed and beautied particles, but higher statistics is needed in order to see the difference between charmed particles and light flavours.\\
+%
 \subsection{Heavy quarkonia suppression}
 Another hard probe of the QGP is given by the heavy quarkonia, i.e. bound states made of a heavy quark and the respective antiquark: charmonium ($c\bar{c}$) and bottomonium ($b\bar{b}$). Since they are composed of heavy quarks, they have been generated in the first stages of the collision. However, the quarks in this bound states are characterized by a non relativistic motion ($\beta\sim$ 0.4) and so the system cannot be described using a perturbative approach.\\
 In the vacuum, the binding potential of a quarkonium state can be expressed using the Cornell potential:
