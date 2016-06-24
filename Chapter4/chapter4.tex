@@ -119,7 +119,7 @@ The grouping is based on a two-dimensional binning: a rare topology is assigned 
 \end{figure}
 %
 \section{Class Dictionary}
-In this section the structure of the class \textit{Dictionary}, the central class of the developed software, will be described. In order to understand the reasons behind the design of the class, it is necessary to analyse the look-up mechanism, represented in Figure \ref{fig:lucap}. During the data acquisition, it is necessary to associate to each cluster the corresponding entry within the dictionary in real time. From the cluster in its row data format, using the class \textit{MinimTopology} an eight-byte hashcode is generated from the pattern in string format. The hashcode uniquely identifies a specific topology, common or rare.
+In this section the structure of the class \textit{Dictionary}, the central class of the developed software, will be described. In order to understand the reasons behind the design of the class, it is necessary to analyse the lookup mechanism, represented in Figure \ref{fig:lucap}. During the data acquisition, it is necessary to associate to each cluster the corresponding entry within the dictionary in real time. From the cluster in its row data format, using the class \textit{MinimTopology} an eight-byte hashcode is generated from the pattern in string format. The hashcode uniquely identifies a specific topology, common or rare.
 Common topologies must have their own entry in the dictionary, while rare topologies are referred to an entry that corresponds to a group of rare topologies with similar characteristics (previous section).
 Therefore it must be possible to discern common topologies from rare topologies so that, when a hashcode is generated, if it belongs to a common topology the corresponding key in the dictionary is found, otherwise the group membership is directly computed and the key corresponding to the group is given. Thus in the dictionary two elements are needed:
 \begin{enumerate}
@@ -129,8 +129,8 @@ Therefore it must be possible to discern common topologies from rare topologies 
 %
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{figures/lucap.png}
-  \caption{Scheme of the look-up mechanism.}
+  \includegraphics[scale=0.6]{figures/lucap.png}
+  \caption{Scheme of the lookup mechanism.}
   \label{fig:lucap}
 \end{figure}
 %
@@ -168,5 +168,45 @@ Finally, there is the information related to the cumulative frequency. Inside th
  \label{tab:vec}
 \end{table}
 %
+\section{Map}
+The second element of the dictionary is a map, which associates the hashcodes of common topologies to their corresponding groupID. A map is an object of the C++ standard template library, in particular it is an associative array, i.e. a container in which the elements are stored as a combination of a \textit{key value} and \textit{mapped value}. In this case the hashcode is the key value, unique for each topology, while the groupID is the mapped value. Each pair in the dictionary is uniquely identified by its key value and all the pairs are sorted in descending order with respect to key value itself. A map is a balanced binary search tree, a data structure optimized for the lookup, the addition and the removal of an item. In particular, the complexity of both the insertion and the lookup is $O(\log(n))$, that means that the average number of operations needed for the insertion of a new item or for looking up a key in the structure scales with the logarithm of the number of entries. These characteristics make the operation of lookup fast and this is exactly what is needed to match online a topology with the corresponding entry in the dictionary. Moreover, there is another property that makes a map appreciable, i.e. the \textit{insert} method. This method is used for the insertion of an element, which is uniquely identified by its key: one key cannot appear twice in the map. If one tries to add to the map an element identified by a key that is still not present, this is added in a certain position according to its key value. Otherwise, if the key has already been inserted in the map, the insert method returns an iterator to the element identified by that particular key value, which is therefore easily accessible and prone to be modified. This feature is extremely useful during the construction of the dictionary and represents a further reason for the use of a map.\\
+Summing up, in the dictionary the map is used to have a fast match between the hashcode of a common topology and the corresponding groupID.
+%
+\begin{table}
+\centering
+\renewcommand\arraystretch{1.5}
+ \begin{tabular}{|c|c|}
+  \hline
+  Hashcode & GroupID\\
+  \hline
+  H$_0$ & gr$_{\pi_{0}}$\\
+  H$_1$ & gr$_{\pi_{1}}$\\
+  H$_2$ & gr$_{\pi_{2}}$\\
+  ... & ...\\
+  H$_{k-1}$ & gr$_{\pi_{k-1}}$\\
+  H$_k$ & gr$_{\pi_{k}}$\\
+  \hline
+ \end{tabular}
+ \caption{Example of a vector in a dictionary with $k$ common topologies.\\ ($\pi_0$, ... , $\pi_k$) are the permutations of the integers in the range [0 ; k].}
+ \label{tab:map}
+\end{table}
+%
+\section{Class BuildDictionary}
+%
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{figures/account.png}
+  \caption{Scheme of AccountTopology method: the temporary information about the collected topologies is update with the information of a new element.}
+  \label{fig:account}
+\end{figure}
+%
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{figures/build.png}
+  \caption{.}
+  \label{fig:build}
+\end{figure}
+%
+
 \section{FastSimulation}
 \label{fast}
