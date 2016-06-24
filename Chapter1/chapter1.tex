@@ -62,7 +62,7 @@ Within the Standard Model, the Quantum Chromodynamics (QCD) is the gauge theory 
 \end{equation*}
 %
 A vector boson (gluon) is associated to each generator and the algebra of the group determines the interaction vertices.\\
-The QCD lagrangian is given by equation:
+The QCD Lagrangian is given by equation:
 %
 \begin{equation}
  \label{lQCD}
@@ -188,20 +188,20 @@ With the MIT bag model, a transition from nuclear matter to QGP is expected at $
 \subsection{Lattice QCD}
 Lattice QCD is the main tool to study non-perturbative aspects of QCD and is based on the discretization of the space-time, treated, indeed, as a lattice. This approach offers important advantages: first of all, if in the perturbative approach there is the problem of the divergence of the integrals for large values of the momentum, which can be solved using a renormalization method, in lattice QCD this problem does not exist because the pitch of the lattice defines a minimum distance and consequently a cut-off value for the momentum. The lattice partition function can be written as a path integral and therefore calculated, for example using Monte Carlo methods. On the other hand, the computational cost of numerical calculations can increase dramatically as the lattice spacing decreases, causing a constrain on the minimum pitch to use for the calculations. Moreover, in order to reduce the computational burden, further approximation are needed. For example, the first approximation used is the so called \textit{pure gauge}, in which quarks are considered as static sources of the colour field, fixed in the knots of the lattice, that is equivalent to considering the masses of the quarks infinite. Corrections to include the finite masses of the quarks and a not-null baryo-chemical potential are possible but under development.\\
 In order to explain the basics of lattice QCD, the quantum mechanics case will be first considered for simplicity; then, it will be extended to quantum field theory.
-The grand canonical partition function of the system at a temperature T can be written as:
+The grand-canonical partition function of the system at a temperature T can be written as:
 %
 \begin{equation}
  Z = \sum\limits_{x_{a}}\langle x_{a} | e^{-\beta T} | x_{a} \rangle
 \end{equation}
 %
-where the sum is over all the possible states $x_{a}$ of the system, $\beta=1/T$, and H is the hamiltonian operator.\\
+where the sum is over all the possible states $x_{a}$ of the system, $\beta=1/T$, and H is the Hamiltonian operator.\\
 This formula is very close to Feynman path integrals:
 %
 \begin{equation}
  \langle x_{b} | e^{- i H (t_{b} - t_{a})} | x_{a} \rangle = \int \prod\limits_{i=1}^{n_{t}-1} dx_{i} e^{i S_{M}(x_{a},x_{1},\dots,x_{n_{t}-1},x_{b})}
 \end{equation}
-where $x_{a}$ and $x_{b}$ are initial and final position, respectively at time $t_{a}$ and  $t_{b}$, $x_{i}$ is any of the $n$ intermediate positions in which it has been decided to divide the path and $S_{M}$ is the minkowskian action.\\
-The two previous expressions are very alike, but there are few differences and, for this reason, in order to express the partition function as a path integral, some precautions are needed. First of all, the exponent of the former is real, while the one of the latter is imaginary: it can be solved using a change of variable $t = -i \tau$, known as \textit{Wick rotation}, that is equivalent to using an imaginary time and passing from a minkowskian to an euclidean action. Then, in the partition function formula, initial and final states are the same: this problem can be solved imposing periodic boundary conditions, i.e. $x(\tau_{b}) = x(\tau_{b})$. Choosing appropriate $\tau$ boundaries, i.e. $\tau_{a} = 0 \leq \tau \leq \tau_{b} = \tau_{n_{t}}$, the previous condition can be written as $x_{a} = x(\tau_{n_{t}})$ and the expression for Z becomes:
+where $x_{a}$ and $x_{b}$ are initial and final position, respectively at time $t_{a}$ and  $t_{b}$, $x_{i}$ is any of the $n$ intermediate positions in which it has been decided to divide the path and $S_{M}$ is the Minkowskian action.\\
+The two previous expressions are very alike, but there are few differences and, for this reason, in order to express the partition function as a path integral, some precautions are needed. First of all, the exponent of the former is real, while the one of the latter is imaginary: it can be solved using a change of variable $t = -i \tau$, known as \textit{Wick rotation}, that is equivalent to using an imaginary time and passing from a Minkowskian to an Euclidean action. Then, in the partition function formula, initial and final states are the same: this problem can be solved imposing periodic boundary conditions, i.e. $x(\tau_{b}) = x(\tau_{b})$. Choosing appropriate $\tau$ boundaries, i.e. $\tau_{a} = 0 \leq \tau \leq \tau_{b} = \tau_{n_{t}}$, the previous condition can be written as $x_{a} = x(\tau_{n_{t}})$ and the expression for Z becomes:
 %
 \begin{equation}
  Z = \int dx_{n_{t}} \prod\limits_{i=1}^{n_{t}-1}dx_{i} \; e^{iS_{M}\Big|_{t=-i\tau}} = \int \prod\limits_{i=1}^{n_{t}}dx_{i} \; e^{-S_{E}} \equiv \int \mathcal{D}x \; e^{-S_{E}(x)}
@@ -332,17 +332,17 @@ According to these hypotheses, the mid-rapidity region is characterized by a cer
 \begin{equation}
  \Delta N \;=\; \int_{0}^{\frac{\Delta z}{\tau_{0}}} \frac{dN}{d\beta_{z}}d\beta_{z}\;\cong\;\frac{\Delta z}{\tau_{0}}\frac{dN}{d\beta_{z}}\;=\;\frac{\Delta z}{\tau_{0}}\frac{dN}{dy},
 \end{equation}
-where in the last passage the approximation $\beta_{z}\sim y$ has been done, since the rapidity is almost null. Then, since the rapidity is close to zero, the energy of the particles coincides with their transverse mass $m_{T} = \sqrt{m_{0}^{2} + p_{T}^{2}}$, since $E = m_{T} \cosh y \cong  m_{T}$. Hence, the average energy density of this region is:
+where in the last passage the approximation $\beta_{z}\sim y$ has been done, since the rapidity is almost null. Then, since the rapidity is close to zero, the energy of the particles coincides with their transverse mass $m_{\mathrm{T}} = \sqrt{m_{0}^{2} + p_{\mathrm{T}}^{2}}$, since $E = m_{\mathrm{T}} \cosh y \cong  m_{\mathrm{T}}$. Hence, the average energy density of this region is:
 \begin{equation}
- \langle \epsilon(\tau_{0}) \rangle \; = \; \frac{\Delta N\langle m_{T}\rangle}{\Delta z\:A}\;=\;\frac{\Delta z}{\tau_{0}}\frac{dN}{dy}\frac{\langle m_{T}\rangle}{\Delta z\:A}\;=\;\frac{1}{\tau_{0} A} \langle m_{T} \rangle \frac{dN(\tau_{0})}{dy}\;=\;\frac{1}{\tau_{0} A}\frac{dE_{T}(\tau_{0})}{dy},
+ \langle \epsilon(\tau_{0}) \rangle \; = \; \frac{\Delta N\langle m_{\mathrm{T}}\rangle}{\Delta z\:A}\;=\;\frac{\Delta z}{\tau_{0}}\frac{dN}{dy}\frac{\langle m_{\mathrm{T}}\rangle}{\Delta z\:A}\;=\;\frac{1}{\tau_{0} A} \langle m_{\mathrm{T}} \rangle \frac{dN(\tau_{0})}{dy}\;=\;\frac{1}{\tau_{0} A}\frac{dE_{T}(\tau_{0})}{dy},
 \end{equation}
 where $E_{T}$ is the transverse energy and \textit{A} is the area of the overlapping region.\\
 Summing up, at mid-rapidity the energy density can be determined using the Bjorken's formula:
 \begin{equation}
- \epsilon_{Bj}\;=\; \frac{1}{\tau_{0} A}\frac{dE_{T}}{dy}\Big|_{y=0}\;\sim\;\frac{1}{\tau_{0} A}\langle E_{T} \rangle \frac{dN}{d\eta}\Big|_{\eta=0}
+ \epsilon_{Bj}\;=\; \frac{1}{\tau_{0} A}\frac{dE_{T}}{dy}\Big|_{y=0}\;\sim\;\frac{1}{\tau_{0} A}\langle m_{T} \rangle \frac{dN}{d\eta}\Big|_{\eta=0}
 \end{equation}
-Measuring the pseudorapidity density $\frac{dN}{d\eta}$ and the average hadron energy transverse energy $\langle E_{T} \rangle$, which can be obtained experimentally by measuring the energy of charged hadrons, provided that an estimate of $\tau_{0}$ is given, the energy density can be easily determined. ALICE obtained for Pb-Pb collisions in the centrality range 0-5 \% $\epsilon_{Bj} \approx$ 16 GeV/fm$^{3}$, considering a formation time $\tau_{0}$ = 1 fm/c. The energy density is so well above the critical energy density $\epsilon_{C} \sim$ 1 GeV/fm$^{3}$ expected for the phase transition according to the lattice QCD calculations.\\
-Finally, it is interesting to compare the charged multiplicity, normalized using the number of participants nucleons, in heavy-ion collisions with the value obtained in p-p collisions. The normalization factor is important for this comparison, since in p-p collisions there are always two participants, while in ion collisions the number of participants depends on the centrality of the event and, for this reason, it is important to fix the centrality range.
+Measuring the pseudorapidity density $\frac{dN}{d\eta}$ or the average hadron transverse mass $\langle m_{T} \rangle$, which can be obtained experimentally by measuring the energy of charged hadrons, provided that an estimate of $\tau_{0}$ is given, the energy density can be easily determined. ALICE obtained for Pb-Pb collisions in the centrality range 0-5 \% $\epsilon_{Bj} \approx$ 16 GeV/fm$^{3}$, considering a formation time $\tau_{0}$ = 1 fm/c. The energy density is so well above the critical energy density $\epsilon_{C} \sim$ 1 GeV/fm$^{3}$ expected for the phase transition according to the lattice QCD calculations.\\
+Finally, it is interesting to compare the charged multiplicity, normalized using the number of participants nucleons, in heavy-ion collisions with the value obtained in pp collisions. The normalization factor is important for this comparison, since in pp collisions there are always two participants, while in ion collisions the number of participants depends on the centrality of the event and, for this reason, it is important to fix the centrality range.
 %
 \begin{figure}
   \centering
@@ -353,22 +353,22 @@ Finally, it is interesting to compare the charged multiplicity, normalized using
   \caption{(a) Values of $dN/d\eta$ normalized by the average number of participant pairs for central Pb-Pb and Au-Au collisions as a function of $\sqrt{s_{NN}}$ \cite{multen}. (b) Ratio between pseudorapidity energy density and pseudorapidity density as a function of the number participants for different values of $\sqrt{s_{NN}}$ at PHENIX experiment.}
 \end{figure}
 %
-In Figure \ref{fig:multen}, the pseudorapidity per participant pair is shown as a function of the energy $\sqrt{s_{NN}}$: the particle production trend is steeper in AA than what obtained in p-p collisions.\\
-Then, considering the ratio between the energy pseudorapidity density $\frac{dE}{d\eta}$ and  the pseudorapidity density $\frac{dN}{d\eta}$ as a function of the number of participants, it can be seen that this quantity does not change much with $\sqrt{s_{NN}}$. This means that the extra energy goes into the production of new particles rather than into kinetic energy.
+In Figure \ref{fig:multen}, the pseudorapidity per participant pair is shown as a function of the energy $\sqrt{s_{NN}}$: the particle production trend is steeper in AA than what obtained in pp collisions.\\
+Then, considering the ratio between the pseudorapidity energy density $\frac{dE}{d\eta}$ and  the pseudorapidity density $\frac{dN}{d\eta}$ as a function of the number of participants, it can be seen that this quantity does not change much with $\sqrt{s_{NN}}$. This means that the extra energy goes into the production of new particles rather than into kinetic energy.
 %
 \subsubsection{Multiplicity of identified particles}
 The measurement of the multiplicity of the hadronic species. i.e. of the chemical composition of the system after the hadronization, allows to get important information about the state of the system at the chemical freeze-out, like, for example, whether the fireball was at the equilibrium or not, the temperature and the baryonic content.\\
-The abundances of the different hadronic species produced in an ion collision can be described using the so called \textit{statistical thermal model}, which is based on the hypothesis that the system is at chemical and thermal equilibrium when the chemical freeze-out occurs. With this assumption, it is possible to describe the system using the statistical mechanics, in particular using a grand canonical ensemble with two parameters, the temperature and the baryo-chemical potential. It is important to note that the equilibrium is postulated: this model does not describe the evolution of the collision till the phase transition and not even how this transition takes place. It is a merely statistical equilibrium, due to the way in which the hadronization fills the phase space, realizing the most probable configuration. Secondly, the system is described as an ideal gas of hadrons and resonances (\textit{Hagedorn's gas}, from the name of the scientist who has developed the model). It contains all the degrees of freedom of a strongly interacting confined system, for not too high temperatures (T < 190 MeV). With this method, a gas of interacting hadrons is approximated by a gas of non interacting hadrons and resonances.\\
-Using the grand canonical ensemble, the partition function for the gas just described is given by the product of the partition functions of each species:
+The abundances of the different hadronic species produced in an ion collision can be described using the \textit{statistical thermal model}, which is based on the hypothesis that the system is at chemical and thermal equilibrium when the chemical freeze-out occurs. With this assumption, it is possible to describe the system using the statistical mechanics, in particular using a grand-canonical ensemble with two parameters, the temperature and the baryo-chemical potential. It is important to note that the equilibrium is postulated: this model does not describe the evolution of the collision till the phase transition and not even how this transition takes place. It is a merely statistical equilibrium, due to the way in which the hadronization fills the phase space, with the most probable configuration. Secondly, the system is described as an ideal gas of hadrons and resonances (\textit{Hagedorn's gas}, from the name of the scientist who has developed the model). With this method the interactions which lead to the formation of resonances are implicitly included in the Hamiltonian of the system.\\
+Using the grand-canonical ensemble, the partition function for the gas just described is given by the product of the partition functions of each species:
 \begin{equation}
  Z^{GC}(T,V,\mu)\; = \;\prod_{i}Z^{GC}_{i}(T,V,\mu_{i}),
 \end{equation}
-where, for the left hand side, the chemical potential $\mu$ is the parameter that in the grand canonical ensemble guarantees the average conservation of the quantum numbers:
+where T and V are respectively the temperature and the volume of the system and $\mu_i$ is the chemical potential potential of the species i, defined as:
 \begin{equation}
-\mu \; = \;\sum_{i} \mu_{Q_{i}}Q_{i},
+\mu_i \; = \;\sum_{j} \mu_{Q_{j}}Q_{j},
 \end{equation}
-where $Q_{i}$ are the conserved quantum numbers, $\mu_{Q_{i}}$ are the chemical potentials associated to these quantities, and $\mu$ is the energy necessary to add to the system a particle with quantum numbers $Q_{i}$.\\
-In the case of a gas of particles with a low mass (m < 1.8 GeV), i.e. without heavy quarks, there are three conserved quantum numbers: the third component of the isospin $I_{3}$, the baryonic number \textit{B}, the strangeness \textit{S}. Therefore, for each species $\mu_{i} = \mu_{I_{3}}I_{3i} + \mu_{B}B_{i} + \mu_{S}S_{i}$.
+where $Q_{j}$ are the conserved quantum numbers and $\mu_{Q_{i}}$ are the chemical potentials associated to these quantities.\\
+In the case of a gas of light flavoured hadrons, there are three conserved quantum numbers: the third component of the isospin $I_{3}$, the baryonic number \textit{B}, the strangeness \textit{S}. Therefore, for each species $\mu_{i} = \mu_{I_{3}}I_{3i} + \mu_{B}B_{i} + \mu_{S}S_{i}$.
 From the definition of the partition function for the single species:
 \begin{equation}
  \ln Z_{i}\; = \; \frac{Vg_{i}}{2\pi^{2}}\int_{0}^{\infty}\pm\:p^{2}dp\ln[1\pm e^{-\frac{E-\mu_{i}}{T}}],
@@ -387,36 +387,34 @@ where $R_{i}$ are the ratios just described and $\sigma$ is the error associated
 Considering the phase diagram, at the LHC the chemical freeze-out is extremely close to the phase transition predicted from the lattice QCD.
 %
 \subsection{Particle momentum spectra and radial flow}
-The transverse momentum distributions (or transverse mass distributions) of the particles give an important information about the system created in the heavy ion collision, such as, for example, an estimation of the temperature of the thermal freeze-out. For these reason, there is the necessity to focus on the soft probes, those low transverse momentum particles generated in the last stages of the collision, which constitutes the bulk ($\sim$ 99\%) of the particle yield.\\
-From the measurements in p-p collisions, it is known that the transverse mass distributions, normalized to the transverse mass, have an exponential trend:
+The transverse momentum distributions (or transverse mass distributions) of the particles give important information about the system created in the heavy ion collision, such as, for example, an estimation of the temperature of the thermal freeze-out. In particular the spectra are dominated by the soft probes at low $\pt$, which constitute the bulk ($\gtrsim$ 99\%) of the particle yield.\\
+From the measurements in pp collisions, it is known that the transverse mass distributions have the form:
 \begin{equation}
- \frac{1}{m_{T}}\frac{dN}{dm_{T}}\; \propto \; e^{-\frac{m_{T}}{T_{slope}}} \ \ \ \longrightarrow \ \ \ \frac{dN}{dm_{T}}\; \propto \;m_{T}\: e^{-\frac{m_{T}}{T_{slope}}},
+ \frac{1}{m_{\mathrm{T}}}\frac{dN}{dm_{\mathrm{T}}}\; \propto \; e^{-\frac{m_{\mathrm{T}}}{T_{slope}}} \ \ \ \longrightarrow \ \ \ \frac{dN}{dm_{\mathrm{T}}}\; \propto \;m_{\mathrm{T}}\: e^{-\frac{m_{\mathrm{T}}}{T_{slope}}},
 \end{equation}
 where $T_{slope}$ has the same value for all the particles ($T_{slope} \approx $ 167 MeV).
-Experimentally it is easier to measure the transverse momentum instead f the transverse mass, since the latter requires the identification of the particle, but the two distribution are equivalent, due to the easy change of variable:
+Experimentally it is easier to measure the transverse momentum rather than the transverse mass, since the latter requires the identification of the particle, but the two distributions are equivalent, due to the easy change of variable:
 \begin{equation}
- m_{T}\;=\;\sqrt{m^{2}+p_{T}^2} \ \ \ \longrightarrow \ \ \  p_{T}dp_{T}\;=\;m_{T}dm_{T}.
+ m_{\mathrm{T}}\;=\;\sqrt{m^{2}+p_{\mathrm{T}}^2} \ \ \ \longrightarrow \ \ \  p_{\mathrm{T}}dp_{\mathrm{T}}\;=\;m_{\mathrm{T}}dm_{\mathrm{T}}.
 \end{equation}
 Assuming that the observed distributions are thermal Boltzmann distributions, $T_{slope}$ is the temperature at which there is the emission of the particles, i.e. the thermal freeze-out. Hence, $T_{slope} \equiv T_{fo}$\\
 %
 \begin{figure}
   \centering
-  \subfloat[][]
-  {\includegraphics[scale=0.3]{figures/mt.png}\label{fig:mtd}}\quad
-  \subfloat[][]
-  {\includegraphics[scale=0.35]{figures/breakscale.png}\label{fig:breakscale}}
-  \caption{(a) $m_{T}$ spectra for different particles in p-p collisions. (b) $m_{T}$ spectra for different particles in AA collisions for different values of centrality at the STAR experiment.}
+  \includegraphics[scale=0.15]{figures/spectra.png}
+  \caption{Transverse momentum spectra of charged pions (left), kaons (middle), and (anti)protons (right) measured in p-Pb collisions at $\sqrt{s_{\rm NN}}\,=5.02$\,TeV \cite{ptspectrum}.}
+  \label{fig:breakscale}
 \end{figure}
 %
-However, in nuclei collisions the $m_{T}$ is broken. In facts, as it can be seen in Figure \ref{fig:breakscale}, the slope of the spectra decreases when the mass of the particle increases, i.e. the heaviest particles are shifted to higher values of $p_{T}$, and $T_{slope}$ has a linear dependence on the mass of the particle. This phenomenon can be explained introducing a collective motion of all the particles, superposed to the thermal motion:
+In nucleus-nucleus collisions the $m_{\mathrm{T}}$ scaling is broken. In facts, as it can be seen in Figure \ref{fig:breakscale}, the slope of the spectra decreases when the mass of the particle increases, i.e. the heaviest particles are shifted to higher values of $p_{\mathrm{T}}$, and $T_{slope}$ has a linear dependence on the mass of the particle. This phenomenon can be explained introducing a collective motion of all the particles, superposed to the thermal motion:
 \begin{equation}
  T_{slope}\;=\;T_{fo} + \frac{1}{2}mv_{\perp}^{2}.
 \end{equation}
-This collective expansion in the transverse plane is called radial flow. This collective motion is generated by the high pressures generated when the nuclear matter is compressed and heated and, in the case of central collisions, this flow is characterized by a circular symmetry on the azimuthal angle in the transverse plane.\\
-Fitting the spectra of identified particles, it is possible to separate the thermal component from the collective one, obtaining the freeze-out temperature $T_{fo}$ and the radial speed $\beta_{\perp}$. At the ALICE experiment, the temperature of the thermal freeze-out is $T_{fo} \approx$ 110 - 130 MeV.
+This collective expansion in the transverse plane is called radial flow. It originates from the high pressures generated when the nuclear matter is compressed and heated and, in the case of central collisions, this flow is characterized by a circular symmetry on the azimuthal angle in the transverse plane.\\
+Fitting the spectra of identified particles, it is possible to separate the thermal component from the collective one, obtaining the freeze-out temperature $T_{fo}$ and the radial expansion speed $\beta_{\perp}$. At the ALICE experiment, the temperature of the thermal freeze-out is $T_{fo} \approx$ 110 - 130 MeV.
 %
 \subsubsection{Anisotropic flow}
-While in central collision the radial flow is characterized by an azimuthal symmetry in the transverse plane, fer semi-central collisions the overlap between the colliding nuclei has an asymmetric almond shape, so the pressure gradients inside the generated medium lead to anisotropies in $\phi$. In facts, the impact parameter generates a favoured direction in the transverse plane: the impact parameter and the beam direction define the so called \textit{reaction plane}, identified by the angle $\Psi_{RP}$ in the transverse plane.\\
+While in central collision the radial flow is characterized by an azimuthal symmetry in the transverse plane, fer semi-central collisions the overlap between the colliding nuclei has an asymmetric almond shape, so the pressure gradients inside the generated medium lead to anisotropies in $\phi$. The impact parameter generates a favoured direction in the transverse plane: the impact parameter and the beam direction define the \textit{reaction plane}, identified by the angle $\Psi_{RP}$ in the transverse plane.\\
 %
 \begin{figure}
   \centering
@@ -425,32 +423,47 @@ While in central collision the radial flow is characterized by an azimuthal symm
   \label{fig:flow}
 \end{figure}
 %
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.15]{figures/aniflow.png}
+  \caption{Anisotropic flow (v2) for pions, kaons, antiprotons, Kshort, Lambda in 10-20\% centrality bins \cite{elliptic}.}
+  \label{fig:aniflow}
+\end{figure}
+%
 There are both spatial anisotropies and momentum anisotropies: the interactions among the particles, if strong enough, can convert the initial geometrical anisotropy into an anisotropy in the momenta distribution, that can be measured.\\
 The azimuthal particle distribution can be parametrized with a Fourier expansion:
 \begin{equation}
  \frac{dN}{d(\phi-\Psi_{RP})}\;=\;\frac{N_{0}}{2\pi} + \frac{N_{0}}{\pi}\sum_{z} \nu_{k}\cos[k(\phi-\Psi_{RP})]
 \end{equation}
-In this equation, the sine functions are not present, since the distribution must be symmetric with respect to $\Psi_{RP}$.
+In this expression, the sine functions are not present, since the distribution must be symmetric with respect to $\Psi_{RP}$.
 The coefficients of the harmonics, which are given by the expression:
 \begin{equation}
  \nu_{k}\;=\;\langle \cos[k(\phi-\Psi_{RP})]\rangle,
 \end{equation}
-describe different kinds of anisotropies: $\nu_{1}$, for example, is the \textit{direct flow} coefficient and describes an asymmetry between forward and backward particle production; $\nu_{2}$, instead, is the elliptic flow, which describes the difference between the number of particle emitted in the reaction plane and in the direction orthogonal to it. For the other coefficients, the situation is similar.\\
-The geometrical anisotropy, which is the origin of the elliptic flow, attenuates with the evolution of the system, since the gradients of pressure, which are responsible for this asymmetry, are stronger in the first instants of the collision. Therefore, the measurement of the elliptic flow allows to get information about the state equation of the system in the early stages of the collision, being a good test for hydrodynamic models which describe the evolution of the medium. According to the to the measure of the anisotropic flow, the QGP seems to behave like a perfect fluid, rather than like a perfect gas, as one could expect.
+describe different kinds of anisotropies: $\nu_{1}$, for example, is the \textit{direct flow} coefficient and describes an asymmetry between forward and backward particle production; $\nu_{2}$, instead, is the elliptic flow, which describes the difference between the number of particles emitted in the reaction plane and in the direction orthogonal to it. The other coefficient express different anisotropies.\\
+Since the geometrical anisotropy decreases with the evolution of the system, the measurement of the elliptic flow allows to get information about the state equation of the system in the early stages of the collision. It is a good test for hydrodynamic models which describe the evolution of the medium. According to the to the measure of the anisotropic flow, the QGP seems to behave like a perfect fluid, rather than like a perfect gas, as one could expect.
 %
 \subsection{Nuclear modification factor}
-The remaining observables used at the ALICE experiment are hard probes, i.e. particles generated in the first stages of the collision, in processes with an high momentum transfer. For this reason, hard probes can give important information about the properties of the medium, even if they are rare events (< 0.1\%).\\
-In order to understand the differences between p-p and nuclei collision, it is important two compare the results of the formers with those of the latters.\\
-In nuclei collisions the probability of interaction, according to the Glauber Model, scales with the number of elementary nucleon-nucleon collision $N_{coll}$:
+%
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.15]{figures/Raa.png}
+  \caption{Average of prompt $D^0$, $D^+$, $D^{*+}$ $R_{AA}$ in the centrality classes 0-10\% \cite{RAAFIG}.}
+  \label{fig:Raa}
+\end{figure}
+%
+Other important observables at the ALICE experiment are hard probes, i.e. particles generated in the first stages of the collision, in processes with a high momentum transfer. For this reason, hard probes can give important information about the properties of the medium, even if they are rare events (< 0.1\% of the particle yield).\\
+In order to understand the differences between pp and nucleus-nucleus collisions, it is important to compare the results of the formers with those of the latters.\\
+In nucleus-nucleus collisions the probability of interaction, according to the Glauber Model, scales with the number of elementary nucleon-nucleon collision $N_{\mathrm{coll}}$:
 \begin{equation}
- p_{AA}^{hard}\;\propto\;\sigma_{hard}N_{coll}
+ p_{\mathrm{AA}}^{hard}\;\propto\;\sigma_{\mathrm{hard}}N_{\mathrm{coll}}
 \end{equation}
-For this reason, it is expected that transverse momentum spectra measured in nuclei collision can be obtained scaling the spectra for p-p collisions by the the number of elementary collisions $N_{coll}$.
+For this reason, it is expected that transverse momentum spectra measured in nucleus-nucleus collisions can be obtained scaling the spectra for pp collisions by the the number of elementary collisions $N_{\mathrm{coll}}$.
 Therefore, the \textit{nuclear modification factor}  can be defined as:
 \begin{equation}
- R_{AA}(p_{T})\;=\;\frac{1}{\langle N_{coll}\rangle}\frac{dN_{AA}/dp_{T}}{dN_{pp}/dp_{T}}.
+ R_{\mathrm{AA}}(p_{\mathrm{T}})\;=\;\frac{1}{\langle N_{\mathrm{coll}}\rangle}\frac{dN_{\mathrm{AA}}/dp_{\mathrm{T}}}{dN_{pp}/dp_{\mathrm{T}}}.
 \end{equation}
-For low values of the transverse momentum ($p_{T} \lesssim$ 2 GeV), $R_{AA}$ < 1 is expected, since the probability for soft processes, according to the Glauber model, scales with the number of participants $N_{part}$. For hard particles, instead, $R_{AA} \sim$ 1 is expected. It is important to note that heavy quarks (c, b, t) belong to hard physics independently from the transverse momentum value, because their high masses can be produced only in processes with a high momentum transfer. In reality, for values of $p_{T} \gtrsim$ 2 GeV, the $R_{AA}$ is greater than the unity, thanks to phenomena like the Cronin effect, i.e. a translation of the $p_{T}$ spectra towards higher values, due to multiple interactions of the nucleon inside the other nucleus, and the modification of the parton distribution functions. These are called initial states effects because they are not influenced by the evolution of the system, but depend on initial conditions. The $R_{AA}$ can also be modified by final state effects, which reflect the interaction of the particles with the medium generated in the collision. Indeed, since high momentum partons are created in the first stages of the collision, they undergo all the evolution of the collision and their momentum can change due to the energy loss in the fireball, which could lead to the quenching of high $p_{T}$ spectra. The energy loss can be evaluated from the \textit{BDMPS formula}[da mettere]:
+For low values of the transverse momentum ($p_{\mathrm{T}} \lesssim$ 2 GeV), $R_{\mathrm{AA}}$ < 1 is expected, since the probability for soft processes, according to the Glauber model, scales with the number of participants $N_{part}$. For hard hadrons $R_{\mathrm{AA}} \sim$ 1 would expected be expected in case there were not nuclear effects. Since nuclear effects occur, $R_{\mathrm{AA}}$ < 1. It is important to note that heavy quarks (c, b, t) belong to hard physics independently from the transverse momentum value, because their high masses can be produced only in processes with a high momentum transfer. In reality, for values of $p_{\mathrm{T}} \gtrsim$ 2 GeV,  $R_{\mathrm{AA}}$ is greater than the unity, thanks to phenomena like the Cronin effect, i.e. a translation of the $p_{\mathrm{T}}$ spectra towards higher values, due to multiple interactions of the nucleon inside the other nucleus, and the modification of the parton distribution functions. These are called initial states effects because they are not influenced by the evolution of the system, but depend on initial conditions. The $R_{\mathrm{AA}}$ can also be modified by final state effects, which reflect the interaction of the particles with the medium generated in the collision. Indeed, since high momentum partons are created in the first stages of the collision, they undergo all the evolution of the collision and their momentum can change due to the energy loss in the fireball, which could lead to the quenching of high $p_{\mathrm{T}}$ spectra. The energy loss can be evaluated from the \textit{BDMPS formula}\cite{RAA}:
 \begin{equation}
  \langle \Delta E \rangle \;\propto\;\alpha_{S} \:C_{R}\: \hat{q}\: L^{2},
 \end{equation}
@@ -459,31 +472,31 @@ one, $\hat{q}$ is the transport coefficient, related to the properties of the me
 In the next sections, the main hard probes observed at ALICE will be described.
 %
 \subsection{Jet quenching}
-A jet is a collimated emission of hadrons, which originates from fragmentation of a high-$p_{T}$ parton. These partons are created back to back in the initial collision and they form hadrons during the hadronization. For this reason, in small systems, such as in p-p collisions, two jets of hadrons emitted in opposite directions are usually seen. In ion collisions, however, the situation in different, since the high energy parton can interact with the medium and, consequently, lose energy as previously described.
+A jet is a collimated emission of hadrons, which originates from fragmentation of a high-$p_{\mathrm{T}}$ parton. These partons are created back to back in the initial collision and they form hadrons during the hadronization. For this reason, in small systems, such as in pp collisions, two jets of hadrons emitted in opposite directions are usually seen. In ion collisions, however, the situation in different, since the high energy parton can interact with the medium and, consequently, lose energy as previously described.
 %
 \begin{figure}
   \centering
   \includegraphics[scale=0.3]{figures/zoom.jpeg}
-  \caption{Azimuthal distributions for p-p, d-Au, Au-Au at STAR \cite{jets}.}
+  \caption{Azimuthal distributions for pp, d-Au, Au-Au at STAR \cite{jets}.}
   \label{fig:jet}
 \end{figure}
 %
-Hence, for ion collisions, the azimuthal distribution of high momentum particles is strongly dependent on the point of creation of the pair $q\bar{q}$. Indeed, if the partons are produced inside the fireball, they are slowed down while exiting the medium and so they hadronize in low $p_{T}$ particles. Otherwise, if the pair is produced on the surface of the fireball, the hadron whose momentum is directed outwards hadronizes in a high $p_{T}$ particle, i.e. creates a jet that can be detected, while the parton emitted inwards travels through the whole fireball, losing energy and hadronizing in a low $p_{T}$ particle. Therefore, the study of azimuthal angle correlation between two high $p_{T}$ particles can give important information about the creation of a hot and dense medium.\\
-In Figure \ref{fig:jet}, the measures of the azimuthal correlation are reported for p-p, d-Au and Au-AU collisions for the STAR experiment. As it can be seen, for the first two kinds of collision there are two jets emitted back to back, while for heavy ions collisions one of the jets is suppressed. This can be considered a proof of the creation of a hot and dense medium, such as the QGP.
+Hence, for ion collisions, the azimuthal distribution of high momentum particles is strongly dependent on the point of creation of the pair $q\bar{q}$. Indeed, if the partons are produced inside the fireball, they are slowed down while exiting the medium and so they hadronize in low $p_{\mathrm{T}}$ particles. Otherwise, if the pair is produced on the surface of the fireball, the hadron whose momentum is directed outwards hadronizes in a high $p_{\mathrm{T}}$ particle, i.e. creates a jet that can be detected, while the parton emitted inwards travels through the whole fireball, losing energy and hadronizing in a low $p_{\mathrm{T}}$ particle. Therefore, the study of azimuthal angle correlation between two high $p_{\mathrm{T}}$ particles can give important information about the creation of a hot and dense medium.\\
+In Figure \ref{fig:jet}, the measures of the azimuthal correlation are reported for pp, d-Au and Au-AU collisions for the STAR experiment. As it can be seen, for the first two kinds of collision there are two jets emitted back to back, while for heavy ions collisions one of the jets is suppressed. This can be considered a proof of the creation of a hot and dense medium, such as the QGP.
 %
 \subsection{Open heavy flavours}
-Particles constituted by a heavy quark, i.e. charm and beauty, are called \textit{open heavy flavours}. Considering the great mass value of the heavy quarks ($m_{b}\sim$ 4.8 GeV and $m_{c}\sim$ 1.2 GeV), they can only be produced in the initial stages of the collision, in scatterings with a high momentum transfer between partons. For this reason, their production con be described using the perturbative QCD till very low values of transverse momentum. This kind of measurements is used both in p-p collisions, in order to test the theoretical model based on the perturbative QCD and to have a reference for the $R_{AA}$ determination, and in heavy ion collisions, in order to test the energy loss models.\\
-In particular, the energy loss models predict a different loss for hadrons containing heavy quarks compared to light hadrons. This is explained with the different origin of the two types: heavy flavours are generated from a quark fragmentation, while light flavours are mainly produced from gluons. Then, the is the so called \textit{dead cone effect} \cite{deadcone}: the gluon radiation is suppressed at small angles (with respect to the direction of motion) for heavy quarks. In particular, being $E_{Q}$ and $M_{Q}$ respectively the energy and the mass of the heavy quark, the suppression is predicted for angles $\theta<\frac{M_{Q}}{E_{Q}}$. Therefore, the energy loss for light flavours is bigger than in heavy flavours, and the energy loss loss of a particle with a charm quark is bigger than that of a particle with a beauty. The measures of $R_{AA}$ seem to confirm this behaviour for charmed and beautied particles, but higher statistics is needed in order to see the difference between charmed particles and light flavours.
+Particles constituted by a heavy quark, i.e. charm and beauty, are called \textit{open heavy flavours}. Considering the great mass value of the heavy quarks ($m_{b}\sim$ 4.8 GeV and $m_{c}\sim$ 1.2 GeV), they can only be produced in the initial stages of the collision, in scatterings with a high momentum transfer between partons. For this reason, their production con be described using the perturbative QCD till very low values of transverse momentum. This kind of measurements is used both in pp collisions, in order to test the theoretical model based on the perturbative QCD and to have a reference for the $R_{\mathrm{AA}}$ determination, and in heavy ion collisions, in order to test the energy loss models.\\
+In particular, the energy loss models predict a different loss for hadrons containing heavy quarks compared to light hadrons. This is explained with the different origin of the two types: heavy flavours are generated from a quark fragmentation, while light flavours are mainly produced from gluons. Then, the is the so called \textit{dead cone effect} \cite{deadcone}: the gluon radiation is suppressed at small angles (with respect to the direction of motion) for heavy quarks. In particular, being $E_{Q}$ and $M_{Q}$ respectively the energy and the mass of the heavy quark, the suppression is predicted for angles $\theta<\frac{M_{Q}}{E_{Q}}$. Therefore, the energy loss for light flavours is bigger than in heavy flavours, and the energy loss loss of a particle with a charm quark is bigger than that of a particle with a beauty. The measures of $R_{\mathrm{AA}}$ seem to confirm this behaviour for charmed and beautied particles, but higher statistics is needed in order to see the difference between charmed particles and light flavours.
 %
 \subsection{Heavy quarkonia suppression}
-Another hard probe of the QGP is given by the heavy quarkonia, i.e. bound states made of a heavy quark and the respective antiquark: charmonium ($c\bar{c}$) and bottomonium ($b\bar{b}$). Since they are composed of heavy quarks, they have been generated in the first stages of the collision. However, the quarks in this bound states are characterized by a non relativistic motion ($\beta\sim$ 0.4) and so the system cannot be described using a perturbative approach.\\
+Another hard probe of the QGP is given by the heavy quarkonia, i.e. bound states made of a heavy quark and the respective antiquark: charmonium ($c\bar{c}$) and bottomonium ($b\bar{b}$). Since they are composed of heavy quarks, they are generated in the first stages of the collision. However, the quarks in this bound states are characterized by a non relativistic motion ($\beta\sim$ 0.4) and so the system cannot be described using a perturbative approach.\\
 In the vacuum, the binding potential of a quarkonium state can be expressed using the Cornell potential:
 \begin{equation}
  V(r)\;=\;-\frac{\alpha_{S}}{r}+kr,
 \end{equation}
 where \textit{k} is a parameter and \textit{r} is he distance between \textit{q} and $\bar{q}$.
 As it can be seen, this potential is composed of a coulombian potential, induce by the exchange of a gluon, and a confining potential, which parametrizes the non perturbative effects.\\
-However, if the quarkonium is immersed in the QGP, the binding potential changes, since the presence of free quarks and gluons act as a screen bewteen the pair $q\bar{q}$. Therefore, in this case the potential becomes a Yukawa type potential:
+However, if the quarkonium is immersed in the QGP, the binding potential changes, since the presence of free quarks and gluons act as a screen between the $q\bar{q}$ pair. Therefore, in this case the potential becomes a Yukawa type potential:
 \begin{equation}
  V(r)\;=\;-\frac{\alpha_{S}}{r}e^{-\frac{r}{\lambda_{D}}}.
 \end{equation}
@@ -492,13 +505,13 @@ The quantity $\lambda_{D}$ is called \textit{Debye length}, and is related to th
  \lambda_{D}\;=\;\frac{1}{g\sqrt{\frac{N_{c}}{3}+\frac{N_{f}}{6}}T},
 \end{equation}
 where $N_{c}$ is the number of colours and $N_{f}$ is the number of flavours.\
-The Debye length, hence, decreases when the temperature increases and, consequently, it is possible to determine the temperature of the QGP from the presence or the suppression of a particular excited state of quarkonia. In facts, states which are more bounded have smaller dimensions and, for this reason, they survive at higher temperatures.\\
+The Debye length, hence, decreases when the temperature increases and, consequently, it is possible to estimate the temperature of the QGP from the presence or the suppression of a particular excited state of quarkonia. States which are more bounded have smaller dimensions and, for this reason, they survive at higher temperatures.\\
 The idea of using the $J/\Psi$ suppression as a signature of the QGP formation was introduced in 1986 by Matsui and Satz, in one of the most famous articles of the ultra-relativistic ion physics \cite{matsui}.\\
 %
 \begin{figure}
   \centering
-  \includegraphics[scale=0.25]{figures/jpsi.png}
-  \caption{Transverse momentum dependence of the centrality integrated $J/\Psi$ $R_{AA}$ measured by ALICE in Pb-Pb collisions at $\sqrt{s_{NN}}$ = 2.76 GeV compared to CMS results at the same $\sqrt{s_{NN}}$.}
+  \includegraphics[scale=0.15]{figures/jpsi.png}
+  \caption{Inclusive $J/\Psi$ $R_{AA}$ as a function of the number of participant nucleons measured in Pb-Pb collisions at $\sqrt{s_{NN}}$ = 2.76 TeV \cite{jpsialice}, compared to the PHENIX measurement in Au–Au collisions at $\sqrt{s_{NN}}$ = 0.2 TeV \cite{jpsiphenix}.}
   \label{fig:jpsi}
 \end{figure}
 %
