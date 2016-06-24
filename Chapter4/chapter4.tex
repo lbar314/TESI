@@ -119,9 +119,13 @@ The grouping is based on a two-dimensional binning: a rare topology is assigned 
 \end{figure}
 %
 \section{Class Dictionary}
-In this the structure of the class \textit{Dictionary}, the central class of the developed software. In order to understand the reasons behind the design of the class, it is necessary to analyse the look-up mechanism, represented in Figure \ref{fig:lucap}. During the data acquisition, it is necessary to associate to each cluster the corresponding entry within the dictionary in real time. From the cluster in its row data format, using the class \textit{MinimTopology} an eight-byte hashcode is generated from the pattern in string format. The hashcode uniquely identifies a specific topology, common or rare.
+In this section the structure of the class \textit{Dictionary}, the central class of the developed software, will be described. In order to understand the reasons behind the design of the class, it is necessary to analyse the look-up mechanism, represented in Figure \ref{fig:lucap}. During the data acquisition, it is necessary to associate to each cluster the corresponding entry within the dictionary in real time. From the cluster in its row data format, using the class \textit{MinimTopology} an eight-byte hashcode is generated from the pattern in string format. The hashcode uniquely identifies a specific topology, common or rare.
 Common topologies must have their own entry in the dictionary, while rare topologies are referred to an entry that corresponds to a group of rare topologies with similar characteristics (previous section).
-Therefore it must be possible to discern common topologies from rare topologies so that, when a hashcode is generated, if it belongs to a common topology the corresponding key in the dictionary is found, otherwise the group membership is directly computed and the key corresponding to the group is given.
+Therefore it must be possible to discern common topologies from rare topologies so that, when a hashcode is generated, if it belongs to a common topology the corresponding key in the dictionary is found, otherwise the group membership is directly computed and the key corresponding to the group is given. Thus in the dictionary two elements are needed:
+\begin{enumerate}
+ \item a list containing the whole needed information about common topologies and group of rare topologies;
+ \item a structure containing all the hashcodes of the common topologies and the corresponding element in the list containing its information.
+\end{enumerate}
 %
 \begin{figure}
   \centering
@@ -130,3 +134,39 @@ Therefore it must be possible to discern common topologies from rare topologies 
   \label{fig:lucap}
 \end{figure}
 %
+\subsection{Vector of Groups}
+The first element of the dictionary is a list containing the information about common topologies and groups of rare topologies. From now on the word ``group'' will be used also for common topologies, which constitutes a group of one only element. Hence the term \textit{groupID} means both the identifier of a group of rare topologies and the identifier of a single common topology, interpreted as a group made of a single element. The list consists of a \textit{vector}, object of the C++ standard template library. Vectors are similar to arrays, since they use a continuous storage location for their elements, which can be directly accessed using pointers to elements as efficiently as in arrays. The advantage lies in their dynamic size, automatically changed during storage operations \cite{vector}. This functionality is exactly what is needed in this case, since the number of groups is not known a priori.\\
+The vector contains one element for each group and the corresponding position is its groupID: at position 0 there is the element corresponding to the group whose groupID is 0, at position 1 groupID 1, and so on. Each element is a structure containing the information necessary to define the group:
+\begin{enumerate}[a)]
+ \item the position of the COG with respect to the centre of the reference pixel;
+ \item uncertainties on the impact point position;
+ \item upper limit of the cumulative frequency of the group.
+\end{enumerate}
+As far as the first point is concerned, there is a difference between common topologies and groups of rare topologies. In every case the reference pixel is defined as the pixel containing the COG, therefore this information is the distance between the COG and the centre of the pixel in which it lies. For common topologies this quantity allows to have a better estimate of the position of the impact point, since in many cases the COG does not coincide with the centre of a pixel. This kind of information is not available for groups of rare topologies, since the distance between the COG and the centre of the pixel can be different case-by-case, and hence it must be set to zero, being shared among all the topologies within the group. However, considering that the uncertainties related to the position of the impact point are considered in the worst case scenario, i.e. those of a uniform distribution, and that this approximation concerns rare topologies, this partial loss of information does not affect significantly the precision of the data.\\
+The uncertainties on the impact point position, along x and z directions, for common topologies are determined directly from the data. They are the standard deviations of the population of residuals (distance between the hit-point and the centre of gravity) respectively along x and z directions. It can sound strange to use the distribution of the distances between the COG and the hit-point positions, since the latter is the quantity that has to be determined. In fact, a rough estimation of the hit-point position is given during the first track reconstruction, which occurs online: this quantity can be used to determine the distribution of the residuals to have an estimation of the distance between the two points. A further description about the determination of the parameters of the distribution will be given later.\\
+Finally, there is the information related to the cumulative frequency. Inside the vector the common topologies are sorted in descending order with respect of frequency. After the last common topology, there are the entries corresponding to groups of rare topologies. For each entry the cumulative frequency is the sum of the frequencies of all the entries from the first to the one considered. The use of these quantity will be clear in section \ref{fast}.
+%
+\begin{table}
+\centering
+\renewcommand\arraystretch{1.5}
+ \begin{tabular}{|c|c|c|c|c|c|}
+  \hline
+  GroupID & d$_x$(COG,ref) & d$_z$(COG,ref) & $\sigma_x$ & $\sigma_z$ & Frequency\\
+  \hline
+  0 & d$_{x0}$ & d$_{z0}$ & $\sigma_{x0}$ & $\sigma_{z0}$ & f$_0$\\
+  1 & d$_{x1}$ & d$_{z1}$ & $\sigma_{x1}$ & $\sigma_{z1}$ & f$_0$ + f$_1$\\
+  2 & d$_{x2}$ & d$_{z2}$ & $\sigma_{x2}$ & $\sigma_{z2}$ & f$_0$ + f$_1$ + f$_2$\\
+  ... & ... & ... & ... & .... & ... \\
+  k & d$_{xk}$ & d$_{zk}$ & $\sigma_{xk}$ & $\sigma_{zk}$ & $\sum_{i=0}^{k} f_i$ \\
+  k + 1 & d$_{x(k+1)}$ & d$_{z(k+1)}$ & $\sigma_{x(k+1)}$ & $\sigma_{z(k+1)}$ & $\sum_{i=0}^{k+1} f_i$\\
+  k + 2 & d$_{x(k+2)}$ & d$_{z(k+2)}$ & $\sigma_{x(k+2)}$ & $\sigma_{z(k+2)}$ & $\sum_{i=0}^{k+2} f_i$\\
+  ... & ... & ... & ... & ... & ...\\
+  k + l & d$_{x(k+l)}$ & d$_{z(k+l)}$ & $\sigma_{x(k+l)}$ & $\sigma_{z(k+l)}$ & $\sum_{i=0}^{k+l} f_i$\\
+  \hline
+ \end{tabular}
+ \caption{Example of a vector in a dictionary with $k$ common topologies and $l$ groups of rare topologies.}
+ \label{tab:vec}
+\end{table}
+%
+\section{FastSimulation}
+\label{fast}
