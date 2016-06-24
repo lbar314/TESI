@@ -104,17 +104,29 @@ Summing up, the class MinimTopology has two data members:
 %
 \section{Reduction of the Entries of the Dictionary: Grouping}
 The second requirement for the dictionary concerns the number of entries. As said in section \ref{sec:huff}, the Huffman becomes inefficient when the number of different elements (in this case the number of topologies within the dictionary) is high. For this reason there is the necessity to limit the number of entries of the dictionary to at most O(10$^3$). This objective is achieved grouping rare topologies under a common reference, called \textit{GroupID}. The groups must be formed to gather rare topologies with similar characteristics, i.e. with similar errors related to the estimated impact position of the particle that generated the cluster. The grouping is necessary a lossy operation, since the information about the pattern of pixels, and therefore about the position of the impact point of the single rare topology, is lost in favour of average quantities. However this loss is bearable, since it concerns rare topologies and therefore it interests a very small fraction of the data.\\
-The chosen grouping criterium concerns the dimensions of the bounding box: it is based on the assumption that topologies with similar dimensions have similar uncertainties related to the impact point position. As it will be seen later, for each topology the uncertainty on the impact point position is get from the distribution of the impact points themselves (or rather their first reconstruction) with respect to the COG position. In the case of groups of rare topologies this method is not applicable, since in different topologies the position of the COG within the bounding box can be extremely different and the distribution of the impact points (their first reconstruction) can be different too. Since it is not possible to rely on these distributions, the error is evaluated with the most pessimistic method: the position of the COG is assumed to be equally probable in the whole area of the bounding box. The error associated to the position of the COG is therefore that of a uniform distribution. In particular, a uniform distribution in the range of x(z) dimension of the bounding box:
+The chosen grouping criterium concerns the dimensions of the bounding box: it is based on the assumption that topologies with similar dimensions have similar uncertainties related to the impact point position. As it will be seen later, for each common topology the uncertainty on the impact point position is get from the distribution of the impact points themselves (or rather their first reconstruction) with respect to the COG position. In the case of groups of rare topologies this method is not applicable, since in different topologies the position of the COG within the bounding box can be extremely different and the distribution of the impact points (their first reconstruction) can be different too. Since it is not possible to rely on these distributions, the error is evaluated with the most pessimistic method: the position of the impact point is assumed to be equally probable in the whole area of the bounding box. The error associated to the position of the COG is therefore that of a uniform distribution. In particular, a uniform distribution in the range of x(z) dimension of the bounding box:
 \begin{equation}
  \sigma_x \; = \; \frac{N_{rows} \cdot d_x}{\sqrt{12}} \ \ \ \ \  \sigma_z \; = \; \frac{N_{columns} \cdot d_z}{\sqrt{12}}
 \end{equation}
 Considering a uniform distribution maybe the error is a bit overestimated, but it must be considered that this approximation involves rare topologies and hence a very small fraction of the data.\\
-The grouping is based on a two-dimensional binning: a rare topology is assigned to a particular group according to its number of columns and rows. An example of grouping can be seen in Figure \ref{fig:gruppi}.
-
+The grouping is based on a two-dimensional binning: a rare topology is assigned to a particular group according to its number of columns and rows. An example of grouping can be seen in Figure \ref{fig:gruppi}. The two rare topologies in the figure have very different patterns, but they have have a similar number of rows and columns (in this case exactly the same) and are mapped to the same group. The position of the COG in the bounding box is very different, but after the grouping this information is lost. What remains is the position of the pixel containing the COG, which is the reference pixel of the cluster, and its centre is considered as the best estimate of the impact point of the particle. The error associated to this quantity is that of a uniform distribution, as just described. In this way, with a loss of detail on a small fraction of the total data, it is possible to reduce the number of entries of the dictionary.
+%
 \begin{figure}
   \centering
   \includegraphics[scale=0.5]{figures/gruppi.png}
   \caption{Example of grouping: the two rare topologies have the same number of rows and columns and belong to the same group.}
   \label{fig:gruppi}
+\end{figure}
+%
+\section{Class Dictionary}
+In this the structure of the class \textit{Dictionary}, the central class of the developed software. In order to understand the reasons behind the design of the class, it is necessary to analyse the look-up mechanism, represented in Figure \ref{fig:lucap}. During the data acquisition, it is necessary to associate to each cluster the corresponding entry within the dictionary in real time. From the cluster in its row data format, using the class \textit{MinimTopology} an eight-byte hashcode is generated from the pattern in string format. The hashcode uniquely identifies a specific topology, common or rare.
+Common topologies must have their own entry in the dictionary, while rare topologies are referred to an entry that corresponds to a group of rare topologies with similar characteristics (previous section).
+Therefore it must be possible to discern common topologies from rare topologies so that, when a hashcode is generated, if it belongs to a common topology the corresponding key in the dictionary is found, otherwise the group membership is directly computed and the key corresponding to the group is given.
+%
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{figures/lucap.png}
+  \caption{Scheme of the look-up mechanism.}
+  \label{fig:lucap}
 \end{figure}
 %
