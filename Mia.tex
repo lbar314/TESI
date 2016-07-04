@@ -29,6 +29,12 @@
 \newcommand{\pt}{p_\text{T}}
 \newcommand{\RAA}{R_{\mathrm{AA}}}
 \usepackage{enumerate}
+\usepackage{yfonts,lettrine}
+\renewcommand{\LettrineFont}{\initfamily}
+\setcounter{DefaultLines}{3}
+\AtBeginDocument{\setlength{\DefaultFindent}{0.5em}}
+\setlength{\DefaultNindent}{0pt}
+%\renewcommand{\DefaultLraise}{-0.1}
 
 %\usepackage{lmodern}
 
@@ -65,10 +71,10 @@
 \tableofcontents
 
 \mainmatter
-%\include{Chapter1/chapter1}
-%\include{Chapter2/chapter2}
+\include{Chapter1/chapter1}
+\include{Chapter2/chapter2}
 \include{Chapter3/chapter3}
-%\include{Chapter4/chapter4}
+\include{Chapter4/chapter4}
 \printbibliography
 
 
